@@ -1,5 +1,5 @@
 import React from "react"
-import PieChartComonent from "./pieChart";
+// import PieChartComonent from "./pieChart";
 
 const Dashboard: React.FC = () => {
     return (
