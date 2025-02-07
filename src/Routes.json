@@ -1,0 +1,16 @@
+{
+    "public" : {
+        "homepage": "/public/home",
+        "about": "/public/about",
+        "contact": "/",
+        "pricing": "/",
+        "signin": "/public/signin",
+        "signup": "/public/signup"
+    },
+    
+    "auth": {
+        "homepage": "/auth/dashboard",
+        "invoices": "/auth/invoices",
+        "expenses": "/auth/expenses"
+    }
+}

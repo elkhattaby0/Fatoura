@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --darkBlue: #1E3A8A;
+  --skyBlue: #3B82F6;
+  --black: #374151;
+
+  --green: #10B981;
+  --gold: #F59E0B;
+
+  --white: #FFFFFF;
+  --lightGray: #E5E7EB;
+}
+
+
+body {
+  color: var(--black);
+  background: var(--white);
+  font-family: var(--font-inter), sans-serif;
+}
