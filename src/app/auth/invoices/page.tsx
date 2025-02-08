@@ -3,7 +3,6 @@ import Header from './Header';
 import TableInvoices from './TableInvoices';
 import LineChart from './Chart';
 
-const currency = " DH";
 const infoTable = [
     {
         "InvoicesNumber": "INV-0001",
