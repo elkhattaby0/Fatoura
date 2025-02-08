@@ -12,7 +12,8 @@ const PlanSection:React.FC = () => {
                     <tr className="white">
                         {
                             dt.head.map(n=> (
-                                <th className="px-6 py-3 text-center text-xs font-medium text-black uppercase tracking-wider border-b-[1px] border-lightGray">
+                                <th key={n}
+                                    className="px-6 py-3 text-center text-xs font-medium text-black uppercase tracking-wider border-b-[1px] border-lightGray">
                                     {n}
                                 </th>
                             ))

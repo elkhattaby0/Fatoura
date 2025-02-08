@@ -21,7 +21,7 @@ const AboutSection:React.FC = () => {
                                     <ul className="flex flex-wrap mt-4 gap-4">
                                         {
                                             n.team.map(i=> (
-                                                <li className="my- w-fit p-5 rounded-xl bg-white py-4">
+                                                <li className="my- w-fit p-5 rounded-xl bg-white py-4" key={i.id}>
                                                     <h5>
                                                         <span className="font-semibold">
                                                             {i.fname.charAt(0).toUpperCase() + i.fname.slice(1)}

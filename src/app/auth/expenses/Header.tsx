@@ -9,7 +9,7 @@ interface HeaderProps {
     TotalPendingAmount: number;
 }
 
-const Header: React.FC<HeaderProps> = ({ TotalAmount, infoTable }) => {
+const Header: React.FC<HeaderProps> = ({ TotalAmount }) => {
     return (
         <div className='flex items-center justify-between mb-4'>
                 <div className='border flex flex-col justify-between p-8 rounded-xl bg-gray-50'> 
