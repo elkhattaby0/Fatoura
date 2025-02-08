@@ -1,15 +1,19 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import Link from 'next/link';
 import Image from 'next/image';
+
 const currency = " DH";
 
-interface TableProps {
+interface Item {
     id: string;
     name: string;
     category: string;
     date: string;
     amount: number;
+}
+
+interface TableProps extends Item {
     link: string;
 }
 
@@ -37,7 +41,11 @@ const TableRow: React.FC<TableProps> = ({ id, name, category, date, amount, link
     );
 };
 
-const TableExpenses = ({ infoTable }) => {
+interface TableExpensesProps {
+    infoTable: Item[]; 
+}
+
+const TableExpenses: React.FC<TableExpensesProps> = ({ infoTable }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 10;
     const totalPages = Math.ceil(infoTable.length / itemsPerPage);
@@ -47,7 +55,7 @@ const TableExpenses = ({ infoTable }) => {
     return (
         <>
             <div className='flex justify-between items-center mb-4'>
-                <h2 className='font-medium text-xl'>All Expenses ({infoTable ? infoTable.length : ""})</h2>
+                <h2 className='font-medium text-xl'>All Expenses ({infoTable.length})</h2>
                 <button className='bg-thirdcolor rounded-xl text-white py-2 px-4 flex items-center hover:bg-foreground'>
                     <span className='text-xl font-medium mr-2'>&#x2B;</span>
                     <span className='text-sm'>New Expense</span>
@@ -65,7 +73,7 @@ const TableExpenses = ({ infoTable }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {displayedItems.map(n => (
+                    {displayedItems.map((n) => (
                         <TableRow 
                             key={n.id}
                             id={n.id}
