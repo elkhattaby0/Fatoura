@@ -1,8 +1,11 @@
 "use client"
-import { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
 
-const LineChart = ({ infoTable }) => {
+interface lineChartProps {
+  infoTable: any;
+}
+const LineChart:React.FC<lineChartProps> = ({ infoTable }) => {
   const chartRef = useRef(null);
   const chartInstance = useRef(null); 
   useEffect(() => {

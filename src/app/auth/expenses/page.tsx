@@ -1,6 +1,5 @@
 import React from "react";
 import TableExpenses from "./TableExpenses";
-import LineChart from "./Chart";
 import Header from "./Header";
 
 const expenses = [
@@ -46,10 +45,7 @@ export default function Expenses () {
     const TotalAmount =  expenses.reduce((sum, item)=> sum + item.amount, 0)
     return (
         <div>
-            <Header TotalAmount={TotalAmount} infoTable={expenses} />
-            <div className='my-4'>
-                <LineChart infoTable={expenses}/>
-            </div>
+            <Header TotalAmount={TotalAmount}  />
             <TableExpenses infoTable={expenses} />
         </div>
     )

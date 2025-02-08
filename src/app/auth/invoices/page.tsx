@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from './Header';
 import TableInvoices from './TableInvoices';
-import LineChart from './Chart';
 
 const infoTable = [
     {
@@ -380,7 +379,6 @@ const Invoices: React.FC = () => {
                 TotalPaidAmount={TotalPaidAmount}
                 TotalPendingAmount={TotalPendingAmount}
             />            
-            <LineChart infoTable={infoTable} />
             <TableInvoices 
                 infoTable={infoTable} 
             />   

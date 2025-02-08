@@ -59,7 +59,7 @@ const Header: React.FC<HeaderProps> = ({ TotalAmount,TotalPaidAmount, TotalPendi
                 <p 
                     className={TotalPaidAmount ? 'text-gray-500 text-[12px] font-medium mt-2': "animate-pulse p-2 w-full bg-gray-300 mt-2 rounded-full px-4"}
                 >{TotalPaidAmount ? "Total Unpaid Invoices " + TotalPaidAmount.toLocaleString("en-US") + currency : ""}</p>
-                <div className="relative w-full mt-2">
+                {/* <div className="relative w-full mt-2">
                     <input 
                         type="range" min="0" max="100" 
                         value={(TotalPaidAmount * 100) / TotalAmount} 
@@ -72,7 +72,7 @@ const Header: React.FC<HeaderProps> = ({ TotalAmount,TotalPaidAmount, TotalPendi
                         className="absolute top-0.5 left-0 h-4 bg-thirdcolor rounded-xl text-[10px] text-center text-background"
                         style={{ width: `${(TotalPaidAmount * 100) / TotalAmount}%` }}
                     >{((TotalPaidAmount * 100) / TotalAmount).toFixed(2)}%</div>
-                </div>
+                </div> */}
 
             </div>
         </div>

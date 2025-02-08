@@ -5,8 +5,8 @@ import Image from "next/image";
 const currency = " DH";
 interface HeaderProps {
     TotalAmount: number;
-    TotalPaidAmount: number;
-    TotalPendingAmount: number;
+    // TotalPaidAmount: number;
+    // TotalPendingAmount: number;
 }
 
 const Header: React.FC<HeaderProps> = ({ TotalAmount }) => {
