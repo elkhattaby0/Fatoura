@@ -1,11 +1,15 @@
 import React from "react"
-import Hero from "./hero"
+import HeroSection from "./heroSection"
+import CtaSection from "../ctaSection"
+import AboutSection from "./aboutSection"
 
 const About: React.FC = () => {
     return (
-        <>
-            <Hero />
-        </>       
+        <div className="flex flex-col items-center">
+            <HeroSection />
+            <AboutSection />
+            <CtaSection />
+        </ div>       
     )
 }
 

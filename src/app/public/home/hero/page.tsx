@@ -13,7 +13,7 @@ const Hero: React.FC = () => {
                     <h2
                         className="font-bold text-black text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
                         {dt.txt1}
-                        <span className="font-bold text-darkBlue">{dt.title}</span>
+                        <span className="font-bold text-darkBlue leading-[1.1]">{dt.title}</span>
                         {dt.txt2}
                     </h2>
                     <p className="max-w-md mx-auto mt-3 text-base text-balck sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">

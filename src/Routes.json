@@ -2,8 +2,8 @@
     "public" : {
         "homepage": "/public/home",
         "about": "/public/about",
-        "contact": "/",
-        "pricing": "/",
+        "contact": "/public/contact",
+        "pricing": "/public/pricing",
         "signin": "/public/signin",
         "signup": "/public/signup"
     },
