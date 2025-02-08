@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Link from 'next/link';
 import Image from 'next/image';
-import { currency } from "./page";
+const currency = " DH";
 
 interface TableProps {
     id: string;

@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import { currency } from "./page";
-// import PieChart from "./Pie";
 
+// import PieChart from "./Pie";
+const currency = " DH";
 interface HeaderProps {
     TotalAmount: number;
     TotalPaidAmount: number;

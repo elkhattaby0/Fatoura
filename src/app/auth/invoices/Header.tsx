@@ -5,10 +5,9 @@ interface HeaderProps {
     TotalAmount: number;
     TotalPaidAmount: number;
     TotalPendingAmount: number;
-    currency: string;
 }
-
-const Header: React.FC<HeaderProps> = ({ TotalAmount,TotalPaidAmount, TotalPendingAmount, currency  }) => {
+const currency = " DH";
+const Header: React.FC<HeaderProps> = ({ TotalAmount,TotalPaidAmount, TotalPendingAmount  }) => {
     return (
         <div className='flex items-center justify-between mb-4'>
             <div className='border flex justify-between p-8 w-2/3 rounded-xl bg-background'>

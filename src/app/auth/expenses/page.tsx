@@ -40,7 +40,7 @@ const expenses = [
     { id: 34, name: "Air Conditioning Repair", category: "Maintenance", amount: 350, date: "2024-04-18" },
     { id: 35, name: "Donation to Charity", category: "Other", amount: 500, date: "2024-04-20" }
 ];
-export const currency = " DH";
+const currency = " DH";
 
 export default function Expenses () {
     const TotalAmount =  expenses.reduce((sum, item)=> sum + item.amount, 0)

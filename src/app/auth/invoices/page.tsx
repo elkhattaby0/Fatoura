@@ -3,7 +3,7 @@ import Header from './Header';
 import TableInvoices from './TableInvoices';
 import LineChart from './Chart';
 
-export const currency = " DH";
+const currency = " DH";
 const infoTable = [
     {
         "InvoicesNumber": "INV-0001",
@@ -380,7 +380,6 @@ const Invoices: React.FC = () => {
                 TotalAmount={TotalAmount}
                 TotalPaidAmount={TotalPaidAmount}
                 TotalPendingAmount={TotalPendingAmount}
-                currency={currency}
             />            
             <LineChart infoTable={infoTable} />
             <TableInvoices 
