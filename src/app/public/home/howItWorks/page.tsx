@@ -12,7 +12,7 @@ const HowItWorks: React.FC = () => {
         <div className="container px-4 mx-auto">
           <div className="max-w-5xl mx-auto">
             <div className="flex flex-wrap items-start -mx-5">
-              <div className="w-full lg:w-1/2 px-5 mb-20 lg:mb-0">
+              <div className="w-full lg:w-1/2 px-5 mb-20 max-md:mb-0 lg:mb-0">
                 <div className="max-w-md">
                   <h2 className="font-bold text-darkBlue text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
                     {dt.title}
