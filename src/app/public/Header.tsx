@@ -15,7 +15,7 @@ const Header: React.FC = () => {
     };
     const Lang = () => {
         return (
-            <select className="cursor-pointer hover:shadow outline-none text-darkBlue text-sm font-semibold bg-lightGray rounded-xl border px-2 py-2 ml-2">
+            <select className="cursor-pointer hover:shadow outline-none text-darkBlue text-sm font-semibold bg-lightGray rounded-xl border px-2 py-2.5 ml-2">
                 <option>EN</option>
                 <option>AR</option>
                 <option>FR</option>
@@ -24,16 +24,16 @@ const Header: React.FC = () => {
     }
 
     return (
-        <header>
-        <nav className="bg- h-[80px] py-6 flex ">
-            <div className="flex flex-wrap items-center justify-between w-full max-w-screen-xl px-4 mx-auto w-[87.9%]">
-            <Link href={dt.logo.slug} className="flex items-end outline-none">
+        <header className="relative h-[80px] w-full  flex justify-center">
+        <nav className="h-[80px] w-11/12 py-6 flex absolute z-10 ">
+            <div className="flex flex-wrap  items-center justify-between w-full max-w-screen-xl mx-auto ">
+            <Link href={dt.logo.slug} className="max-md:w-1/5 flex items-end outline-none">
                 <span className="text-2xl font-bold whitespace-nowrap text-darkBlue">{dt.logo.name}</span>
             </Link>
-            <div className="flex items-center lg:order-2">
+            <div className=" max-md:w-3/5 flex items-center justify-end lg:order-2">
                 <Link
                 href={dt.login.slug}
-                className="block relative z-10 py-2 pl-3 pr-4 mr-2 max-md:mr-0 lg:bg-transparent font-semibold text-darkBlue hover:text-skyBlue outline-none"
+                className="block relative z-10 py-2 pl-3 pr-4 mr-2 max-md:mr-0 max-md:hidden lg:bg-transparent font-semibold text-darkBlue hover:text-skyBlue outline-none"
                 aria-current="page"
                 >{dt.login.name}</Link>
                 <Link
@@ -43,7 +43,7 @@ const Header: React.FC = () => {
                 <Lang />
                 <button
                 onClick={toggleMenu}
-                className="inline-flex items-center p-2 ml-1 text-sm text-gray-600 rounded-lg lg:hidden hover:bg-darkBlue"
+                className="inline-flex items-center p-2 ml-1 text-sm text-gray-600 rounded-lg lg:hidden hover:bg-darkBlue outline-none"
                 aria-controls="mobile-menu-2"
                 aria-expanded={isMenuOpen}
                 >
@@ -84,7 +84,7 @@ const Header: React.FC = () => {
                 id="mobile-menu-2"
             >
                 <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0
-                 bg-lightGray rounded-xl px-4 py-2">
+                 bg-lightGray shadow rounded-xl px-4 py-2">
                 {dt.Navbar.map((n) => (
                     <li key={n.id}>
                     <Link

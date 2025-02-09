@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
                                     </Link>
                                 </div> */}
                             </div>
-                            <div className="mt-16 grid grid-cols-4 gap-8 xl:col-span-2 xl:mt-0">
+                            <div className="mt-16 grid grid-cols-4 gap-8 xl:col-span-2 xl:mt-0 max-md:grid-cols-1">
                                 
                                     {
                                         dt.links.map(n=> (
