@@ -25,8 +25,8 @@ const FormSection:React.FC = () => {
       
     return (
         <div className="bg-lightGray w-full flex justify-center">
-            <div className="w-3/4 py-16 flex justify-between border bor der-white">
-                <form onSubmit={handleSubmit} className="w-1/2">
+            <div className="w-3/4 py-16 flex justify-between max-md:flex-col border ">
+                <form onSubmit={handleSubmit} className="w-1/2 max-md:w-full">
                     <h2 className="font-bold text-2xl text-darkBlue">
                         Send Us a Message
                     </h2>
@@ -82,7 +82,7 @@ const FormSection:React.FC = () => {
                         className="bg-darkBlue text-white font-bold py-2 mt-4 px-4 w-full rounded-xl hover:bg-skyBlue outline-none"
                     >Send</button>
                 </form>
-                <div className="w-1/2 pl-16">
+                <div className="w-1/2 max-md:w-full pl-16 max-md:pl-0 max-md:mt-10">
                     {
                         dt.contact.map(n=> (
                             <div key={n.id} className="mb-8">
