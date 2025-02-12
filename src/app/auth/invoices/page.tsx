@@ -401,12 +401,12 @@ const Card = () => {
         <div className='size-80 max-md:size-fit rounded-xl bg-white p-4 shadow'>
             {
                 info.map(n=> (
-                    <>
+                    <div key={n.title}>
                         <h4>{n.title}</h4>
                         <ul>
-                            {n.data.map(i=> <li>{i}</li>)}
+                            {n.data.map(i=> <li key={i}>{i}</li>)}
                         </ul>
-                    </>
+                    </div>
                 ))
             }
         </div>
