@@ -7,11 +7,11 @@ export default function AuthLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <div className="bg-background flex w-full">
-            <LeftSide />
-            <div className="w-full mr-4 ">
-                <Header />
-                <div className="bg-white h- my-2 p-4 border rounded-xl ">
+        <div className="bg-white flex flex-col w-full h-[100vh]">
+            <Header />
+            <div className="w-full flex h-full">
+                <LeftSide />
+                <div className="bg-lightGray p-4 w-10/12 max-md:w-full">
                     {children}
                 </div>                
             </div>

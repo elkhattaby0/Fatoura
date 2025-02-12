@@ -42,7 +42,7 @@ export const data = {
     },
     "footer": {
       "logo" : logo,
-      "description": "Enhance productivity and efficiency with cutting-edge artificial intelligence solutions for your business operations.",
+      "description": "Focus on growing your business, let Fatoura handle the rest. Are you a freelancer or small business owner? Fatoura is the perfect solution to manage your invoices, tax declarations, and cash flow with ease and professionalism.",
       
       "links": [ 
       {
@@ -67,7 +67,7 @@ export const data = {
         "id": 3,
         "title": "Resources",
         "list": [
-          {"id": 1, "name": "Pricing", slug: ""},
+          {"id": 1, "name": "Pricing", slug: route.public.pricing},
           {"id": 2, "name": "Blog", slug: ""},
           {"id": 3, "name": "Case Studies", slug: ""},
           {"id": 4, "name": "Terms of Service", slug: ""},
@@ -78,9 +78,9 @@ export const data = {
         "id": 4,
         "title": "Company",
         "list": [
-          {"id": 1, "name": "About Us", slug: ""},
+          {"id": 1, "name": "About Us", slug: route.public.about},
           {"id": 2, "name": "Careers", slug: ""},
-          {"id": 3, "name": "Contact Us", slug: ""},
+          {"id": 3, "name": "Contact Us", slug: route.public.contact},
         ],
       },
       ],
@@ -221,7 +221,7 @@ export const data = {
     "pricing": {
       "title": "Choose Your Plan",
       "description": "Choose the plan that fits your business and enjoy Fatoura's full features. Start your free trial today.",
-      "currency": "DH",
+      "currency": " MAD",
       "date": "/month",
       "btn": {
         "name": "Get started",
@@ -411,9 +411,8 @@ export const data = {
     },
     "aboutLayout": {
       "hero": {
-        "title": "About Us",
-        "txt1": "Our Mission is to Simplify Your Business Management",
-        "txt2": "At Fatoura, we believe that business management should be easy and accessible to everyone. Whether you're a freelancer, artisan, or small business owner, we're here to help."
+        "title": "About Us: Our Mission is to Simplify Your Business Management",
+        "txt": "At Fatoura, we believe that business management should be easy and accessible to everyone. Whether you're a freelancer, artisan, or small business owner, we're here to help."
       },
       "about": [
         {
@@ -458,7 +457,7 @@ export const data = {
         },
         {
             "id": 2,
-            "title": "PhoneCall Us",
+            "title": "Call Us",
             "txt1": "Phone : ",
             "txt2": "+212 5 00 00 00 00"
         }
@@ -495,5 +494,9 @@ export const data = {
         },
       ]
       
+    },
+
+    "dashboard": {
+
     }
 }

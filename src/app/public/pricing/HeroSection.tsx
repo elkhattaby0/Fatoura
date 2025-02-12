@@ -4,7 +4,7 @@ const dt = data.pricingLayout.hero
 
 const HeroSection:React.FC = () => {
     return (
-        <div className="bg-lightGray flex flex-col items-center justify-center mt-6 max-md:mt-0 py-16 w-full"
+        <div className="bg-lightGray flex flex-col items-center justify-center max-md:mt-0 py-16 w-full"
             style={{
                 backgroundImage:
                 "url('/.jpg')", backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundSize: "cover", 

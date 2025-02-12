@@ -365,16 +365,73 @@ import React from 'react';
 //     }
 // ];
 
+const Title:React.FC<{txt:string;}> = ({ txt }) => {
+    return (
+        txt ?
+        <h3
+            className="font-semibold text-darkBlue text-2xl"
+        >
+            {txt}
+        </h3> :
+        <div className='animate-pulse bg-gray-300 w-[200px] p-3 rounded-full'></div>
+    )
+}
+const Card = () => {
+    const info = [
+        {
+            "title": "Tax Obligations:",
+            "data": [
+                "User Type: Freelancer/Small Business", 
+                "Estimated Tax Amount: 5000 MAD"
+            ]
+        },
+        {
+            "title": "Tax Breakdown:",
+            "data": [
+                "Income Tax: 3000 MAD", 
+                "VAT: 2000 MAD"
+            ]
+        },
+        {
+            "title": "Due Date: 31 December 2023",
+            "data": []
+        }
+    ]
+    return (
+        <div className='size-80 max-md:size-fit rounded-xl bg-white p-4 shadow'>
+            {
+                info.map(n=> (
+                    <>
+                        <h4>{n.title}</h4>
+                        <ul>
+                            {n.data.map(i=> <li>{i}</li>)}
+                        </ul>
+                    </>
+                ))
+            }
+        </div>
+    )
+}
 
-const Invoices: React.FC = () => {
-    
+const AutomaticTaxCalculation = () => {
+    return (
+        <div className=''>
+            
+            <div>
+                <Title txt="Automatic Tax Calculation"/>
+                <Card />
+            </div>
+        </div>
+    )
+}
+const Invoices: React.FC = () => {    
     // const TotalAmount =  infoTable.reduce((sum, item)=> sum + item.Amount, 0)
     // const TotalPaidAmount = infoTable.filter(item=> item.Status === "Paid").reduce((sum, item)=> sum + item.Amount, 0)
     // const TotalPendingAmount = infoTable.filter(item=> item.Status === "Due").reduce((sum, item)=> sum + item.Amount, 0)
     
     return (
         <div>
-            Hello from Invoices
+            <AutomaticTaxCalculation />
         </div>
     )
 }
