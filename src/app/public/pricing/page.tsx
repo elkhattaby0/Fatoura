@@ -1,9 +1,9 @@
 import React from "react";
-import HeroSection from "./HeroSection";
-import PricingSection from "./pricingSection";
-import PlanSection from "./planSection";
-import FaqSection from "../faqSection";
-import CtaSection from "../ctaSection";
+import HeroSection from "./sections/HeroSection";
+import PricingSection from "./sections/pricingSection";
+import PlanSection from "./sections/planSection";
+import FaqSection from "../components/faqSection";
+import CtaSection from "../components/ctaSection";
 
 
 const Pricing:React.FC = () => {

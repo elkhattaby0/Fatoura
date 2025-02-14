@@ -1,8 +1,8 @@
 import React from "react";
-import HeroSection from "./heroSection";
-import FormSection from "./formSection";
-import CtaSection from "../ctaSection";
-import FaqSection from "../faqSection";
+import HeroSection from "./sections/heroSection";
+import FormSection from "./sections/formSection";
+import CtaSection from "../components/ctaSection";
+import FaqSection from "../components/faqSection";
 
 const Contact:React.FC = () => {
     return (

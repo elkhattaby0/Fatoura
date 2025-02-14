@@ -1,7 +1,7 @@
 "use client"
 import React from "react";
 import { useState } from "react";
-import { data } from "../../../data"
+import { data } from "../../../../data"
 const dt = data.contactLayout
 
 const FormSection:React.FC = () => {

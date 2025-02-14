@@ -1,9 +1,8 @@
-import React from "react";
-import { data } from "../../../data"
-const dt = data.aboutLayout.hero
+import React from "react"
+import {data} from "../../../../data"
+const dt = data.pricingLayout.hero
 
-const HeroSection: React.FC = () => {
-    
+const HeroSection:React.FC = () => {
     return (
         <div className="bg-lightGray flex flex-col items-center justify-center max-md:mt-0 py-16 w-full"
             style={{

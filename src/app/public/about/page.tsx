@@ -1,7 +1,8 @@
 import React from "react"
-import HeroSection from "./heroSection"
-import CtaSection from "../ctaSection"
-import AboutSection from "./aboutSection"
+import CtaSection from "../components/ctaSection"
+import AboutSection from "./sections/aboutSection"
+import HeroSection from "./sections/heroSection"
+
 
 const About: React.FC = () => {
     return (

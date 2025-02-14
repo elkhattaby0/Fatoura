@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Script from "next/script";
-import { data } from "../../data"
+import { data } from "../../../data"
 
 const dt = data.header
 

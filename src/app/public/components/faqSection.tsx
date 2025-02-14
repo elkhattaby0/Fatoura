@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import {data} from "../../data"
+import {data} from "../../../data"
 const dt = data.pricingLayout.faq
 
 const FaqSection: React.FC = () => {
