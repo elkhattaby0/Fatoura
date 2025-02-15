@@ -1,6 +1,11 @@
+import type { Metadata } from "next";
 import LeftSide from "./aside";
 import Header from "./Header";
-
+export const metadata: Metadata = {
+    title: "Fatoura - Dashboard",
+    description: "Fatoura SaaS",
+  };
+  
 export default function AuthLayout({
     children,
     }: Readonly<{

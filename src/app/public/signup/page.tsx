@@ -1,9 +1,11 @@
+"use client"
 import React from "react"
 import Link from "next/link";
-import { data } from "../../../data"
-const dt = data.register
+import { useLanguage } from "@/context/LanguageContext";
 
 const SignUp: React.FC = () => {
+    const { t } = useLanguage();
+    const dt = t.register
     return (
         <div className="py-16">
             <div className="flex bg-lightGray rounded-xl shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl">

@@ -1,9 +1,10 @@
+"use client";
 import React from "react";
-import { data } from "../../../../data";
-
-const dt = data.features
+import { useLanguage } from "@/context/LanguageContext";
 
 const Features: React.FC = () => {
+    const { t } = useLanguage();
+    const dt = t.features
     return (
         <div className="bg-darkBlue">
             <section id="features" className="container mx-auto px-4 space-y-6  py-8 md:py-12 lg:py-20">

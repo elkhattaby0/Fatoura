@@ -1,11 +1,13 @@
+"use client";
 import React from "react";
 import Link from "next/link";
-import { data } from "../../../../data"
-const txt = data.pricingLayout.pricing
-const dt = data.pricing
+import { useLanguage } from "@/context/LanguageContext";
 
 
 const PricingSection:React.FC = () => {
+    const { t } = useLanguage();
+    const txt = t.pricingLayout.pricing
+    const dt = t.pricing
     return (
         <div className="w-full flex flex-col items-center">
             <h2 className="text-3xl font-bold text-darkBlue text-center w-3/4 mt-6">

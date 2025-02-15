@@ -1,9 +1,11 @@
+"use client"
 import Link from "next/link";
 import React from "react"
-import { data } from "../../../data"
-const dt = data.signin
+import { useLanguage } from "@/context/LanguageContext";
 
 const SignIn: React.FC = () => {
+    const { t } = useLanguage();
+    const dt = t.signin
     return (
         <div className="py-16">
             <div className="flex bg-lightGray rounded-2xl shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl">

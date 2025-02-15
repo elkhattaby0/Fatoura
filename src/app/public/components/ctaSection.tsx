@@ -1,8 +1,10 @@
+"use client"
 import React from "react";
-import { data } from "../../../data"
-const dt = data.cta
+import { useLanguage } from "@/context/LanguageContext";
 
 const CtaSection:React.FC = () => {
+    const { t } = useLanguage();
+    const dt = t.cta
     return (
         <div className="flex flex-col gap-8 items-center justify-center bg-lightGray my-10 rounded-xl py-16 w-3/4 max-md:w-full">
             <div className="w-3/4" >

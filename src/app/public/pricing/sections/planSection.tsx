@@ -1,8 +1,10 @@
+"use client"
 import React from "react";
-import {data} from "../../../../data"
-const dt = data.pricingLayout.plan
+import { useLanguage } from "@/context/LanguageContext";
 
 const PlanSection:React.FC = () => {
+    const { t } = useLanguage();
+    const dt = t.pricingLayout.plan
     
     return (
         <div className="overflow-x-auto bg-lightGray mt-10 py-10 flex flex-col items-center w-full">

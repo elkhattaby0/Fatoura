@@ -1,10 +1,11 @@
+"use client";
 import Link from "next/link";
 import React from "react"
-import { data } from "../../../../data"
-
-const dt = data.pricing
+import { useLanguage } from "@/context/LanguageContext";
 
 const Pricing: React.FC = () => {
+    const { t } = useLanguage();
+    const dt = t.pricing
     return (
         <div>
             <section className="bg-darkBlue">

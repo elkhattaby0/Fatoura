@@ -1,9 +1,11 @@
+"use client"
 import React from "react";
-import { data } from "../../../../data";
+import { useLanguage } from "@/context/LanguageContext";
 
-const dt = data.howItWorks;
 
 const HowItWorks: React.FC = () => {
+  const { t } = useLanguage();
+  const dt = t.howItWorks
   const leftItems = dt.data.slice(0, 3); 
   const rightItems = dt.data.slice(3);  
   return (

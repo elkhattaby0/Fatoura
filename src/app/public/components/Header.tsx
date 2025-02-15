@@ -2,23 +2,26 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { data } from "../../../data"
 import LanguageSwitcher from "./LanguageSwitcher";
-
-const dt = data.header
+import { useLanguage } from "@/context/LanguageContext";
 
 const Header: React.FC = () => {
     const [isShowed, setIsShowed] = useState(false);
+    const { t } = useLanguage();
+    const dt = t.header
 
     const Navigation = () => {
         return (
-            <ul className="flex items-center mt-4 font-medium lg:flex-row lg:space-x-8  lg:mt-0
+            <ul className="flex justify-between items-center mt-4 font-medium lg:flex-row lg:space-x-8  lg:mt-0
                  bg-lightGray shadow rounded-xl px-4 py-2 max-md:hidden ">
                 {dt.Navbar.map((n) => (
-                    <li key={n.id}>
+                    <li 
+                        key={n.id}
+                        className="font-semibold text-darkBlue hover:text-skyBlue "
+                        >
                     <Link
                         href={n.slug}
-                        className="block relative z-10 py-2 px-4 md:px-2 bg-lightGray lg:bg-transparent text-md font-semibold lg:p-0 text-darkBlue hover:text-skyBlue outline-none"
+                        className="outline-none"
                     >
                         {n.name}
                     </Link>
@@ -63,7 +66,9 @@ const Header: React.FC = () => {
         <nav className="h-[80px] w-11/12 py-6 flex absolute z-10 ">
             <div className="flex flex-wrap  items-center justify-between w-full max-w-screen-xl mx-auto ">
                 <Link href={dt.logo.slug} className="max-md:w-1/5 flex items-end outline-none">
-                    <span className="text-2xl font-bold whitespace-nowrap text-darkBlue">{dt.logo.name}</span>
+                    <span className="text-2xl font-bold whitespace-nowrap text-darkBlue">
+                        {dt.logo.name}
+                        </span>
                 </Link>
                 <Navigation />
                 <NavigationMobile />
@@ -75,7 +80,7 @@ const Header: React.FC = () => {
                     >{dt.login.name}</Link>
                     <Link
                         href={dt.signup.slug}
-                        className="text-white bg-darkBlue hover:bg-skyBlue font-medium hover:shadow rounded-lg text-sm px-4 lg:px-5 py-2.5 lg:py-2.5 sm:mr-2 lg:mr-0 outline-none"
+                        className="text-white bg-darkBlue hover:bg-skyBlue font-medium hover:shadow rounded-lg text-sm px-4 lg:px-5 py-2.5 lg:py-2.5 sm:mx-2 lg:mx-2 outline-none"
                         >{dt.signup.name}</Link>
                     <LanguageSwitcher />
                     <ToggleMenu />

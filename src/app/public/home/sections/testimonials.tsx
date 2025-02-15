@@ -1,9 +1,11 @@
+"use client";
 import React from "react";
 import Image from "next/image";
-import { data } from "../../../../data"
-const dt = data.testimonials
+import { useLanguage } from "@/context/LanguageContext";
 
 const Testimonials: React.FC = () => {
+    const { t } = useLanguage();
+    const dt = t.testimonials
 
     interface clientFeedbackProps {
         id: number;

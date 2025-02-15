@@ -1,10 +1,12 @@
 "use client"
 import React from "react";
 import { useState } from "react";
-import { data } from "../../../../data"
-const dt = data.contactLayout
+import { useLanguage } from "@/context/LanguageContext";
 
 const FormSection:React.FC = () => {
+    const { t } = useLanguage();
+    const dt = t.contactLayout
+
     const [form, setForm] = useState({
         fullName: "",
         email: "",
@@ -25,54 +27,64 @@ const FormSection:React.FC = () => {
       
     return (
         <div className="bg-lightGray w-full flex justify-center">
-            <div className="w-3/4 py-16 flex justify-between max-md:flex-col border ">
+            <div className="w-3/4 py-16 flex justify-between max-md:flex-col ">
                 <form onSubmit={handleSubmit} className="w-1/2 max-md:w-full">
                     <h2 className="font-bold text-2xl text-darkBlue">
-                        Send Us a Message
+                        {dt.form.title}
                     </h2>
                     <div className="mt-4">
-                        <label className="block text-black text-sm font-bold mb-2">Full Name</label>
+                        <label className="block text-black text-sm font-bold mb-2">
+                        {dt.form.name}
+                        </label>
                         <input 
                             name="fullName" 
-                            placeholder="Full Name" 
+                            placeholder={dt.form.name}
                             onChange={handleChange} 
                             className="bg-white text-black focus:outline-none focus:shadow-outline border border-gray-300 rounded-xl py-2 px-4 block w-full appearance-none" 
                         />
                     </div>
                     <div className="mt-4">
-                        <label className="block text-black text-sm font-bold mb-2">Email Address</label>
+                        <label className="block text-black text-sm font-bold mb-2">
+                        {dt.form.email}    
+                        </label>
                         <input 
                             name="email" 
                             type="email" 
-                            placeholder="Email Address" 
+                            placeholder={dt.form.email}
                             onChange={handleChange} 
                             className="bg-white text-black focus:outline-none focus:shadow-outline border border-gray-300 rounded-xl py-2 px-4 block w-full appearance-none" 
                         />
                     </div>
                     <div className="mt-4">
-                        <label className="block text-black text-sm font-bold mb-2">Phone Number - Optional</label>
+                        <label className="block text-black text-sm font-bold mb-2">
+                            {dt.form.phone}
+                        </label>
                         <input 
                             name="phone" 
                             type="tel" 
-                            placeholder="Phone Number- Optional" 
+                            placeholder={dt.form.phone}
                             onChange={handleChange} 
                             className="bg-white text-black focus:outline-none focus:shadow-outline border border-gray-300 rounded-xl py-2 px-4 block w-full appearance-none" 
                         />
                     </div>
                     <div className="mt-4">
-                        <label className="block text-black text-sm font-bold mb-2">Subject</label>
+                        <label className="block text-black text-sm font-bold mb-2">
+                            {dt.form.sjt}
+                        </label>
                         <input 
                             name="subject" 
-                            placeholder="Subject" 
+                            placeholder={dt.form.sjt} 
                             onChange={handleChange} 
                             className="bg-white text-black focus:outline-none focus:shadow-outline border border-gray-300 rounded-xl py-2 px-4 block w-full appearance-none" 
                         />
                     </div>
                     <div className="mt-4">
-                        <label className="block text-black text-sm font-bold mb-2">Message</label>
+                        <label className="block text-black text-sm font-bold mb-2">
+                        {dt.form.msg}
+                        </label>
                         <textarea 
                             name="message" 
-                            placeholder="Message" 
+                            placeholder={dt.form.msg} 
                             onChange={handleChange} 
                             className="bg-white text-black focus:outline-none focus:shadow-outline border border-gray-300 rounded-xl py-2 px-4 block w-full appearance-none"
                         ></textarea>
@@ -80,9 +92,11 @@ const FormSection:React.FC = () => {
                     <button 
                         type="submit" 
                         className="bg-darkBlue text-white font-bold py-2 mt-4 px-4 w-full rounded-xl hover:bg-skyBlue outline-none"
-                    >Send</button>
+                    >
+                        {dt.form.btn}
+                    </button>
                 </form>
-                <div className="w-1/2 max-md:w-full pl-16 max-md:pl-0 max-md:mt-10">
+                <div className="w-1/2 max-md:w-full px-16 max-md:pl-0 max-md:mt-10">
                     {
                         dt.contact.map(n=> (
                             <div key={n.id} className="mb-8">

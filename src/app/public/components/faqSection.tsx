@@ -1,11 +1,11 @@
 "use client";
 import React, { useState } from "react";
-import {data} from "../../../data"
-const dt = data.pricingLayout.faq
+import { useLanguage } from "@/context/LanguageContext";
 
 const FaqSection: React.FC = () => {
     const [isShowed, setIsShowed] = useState<{ [key: number]: boolean }>({});
-
+    const { t } = useLanguage();
+    const dt = t.pricingLayout.faq
     const toggleFAQ = (id: number) => {
         setIsShowed((prev) => ({ ...prev, [id]: !prev[id] }));
     };

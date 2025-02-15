@@ -1,11 +1,13 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
-import { data } from "../../../../data"
-
-const dt = data.benefits
+import { useLanguage } from "@/context/LanguageContext";
 
 
 const Benefits: React.FC = () => {
+    const { t } = useLanguage();
+    const dt = t.benefits
     return (
         <div>
             <section className="text-black body-font">

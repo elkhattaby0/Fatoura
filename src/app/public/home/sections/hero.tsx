@@ -1,15 +1,16 @@
+"use client";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { data } from "../../../../data"
-
-const dt = data.hero
+import { useLanguage } from "@/context/LanguageContext";
 
 const Hero: React.FC = () => {
+    const { t } = useLanguage();
+    const dt = t.hero
     return (
         <div className="relative flex flex-col items-center max-w-screen-xl px-4 mx-auto md:flex-row sm:px-6">
             <div className="flex items-center py-5 md:w-1/2 md:pb-20 md:pt-10 md:pr-10 ">
-                <div className="text-left">
+                <div>
                     <h2
                         className="font-bold text-black text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
                         {dt.txt1}
