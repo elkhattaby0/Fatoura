@@ -14,7 +14,7 @@ const Header: React.FC = () => {
         return (
             <ul className="flex justify-between items-center mt-4 font-medium lg:flex-row lg:space-x-8  lg:mt-0
                  bg-lightGray shadow rounded-xl px-4 py-2 max-md:hidden ">
-                {dt.Navbar.map((n) => (
+                {dt.Navbar.map((n: {id:number; slug:string; name:string;}) => (
                     <li 
                         key={n.id}
                         className="font-semibold text-darkBlue hover:text-skyBlue "
@@ -35,7 +35,7 @@ const Header: React.FC = () => {
             <div className={`absolute z-10 top-20 w-full hidden  ${isShowed ? "max-md:flex" : "hidden" }`}>
                 <div className="bg-lightGray rounded-xl shadow-md w-full h-fit py-5">
                     <ul>
-                        {dt.Navbar.map((n) => (
+                        {dt.Navbar.map((n: {id:number; slug:string; name:string;}) => (
                             <li key={n.id} className="py-2">
                             <Link
                                 href={n.slug}
@@ -54,7 +54,7 @@ const Header: React.FC = () => {
         return (
             <button
                 onClick={()=> isShowed ? setIsShowed(false) : setIsShowed(true)}
-                className="hidden max-md:flex items-center justify-center size-10 bg-lightGray rounded-xl font-bold text-xl text-darkBlue ml-2 hover:shadow"
+                className="hidden max-md:flex items-center justify-center size-10 bg-lightGray rounded-xl font-bold text-xl text-darkBlue hover:shadow"
                 >
                     {isShowed ? "X" : "☰" }
             </button>

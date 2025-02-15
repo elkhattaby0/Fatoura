@@ -15,7 +15,7 @@ const FaqSection: React.FC = () => {
         <div className="bg-lightGray py-10 flex flex-col items-center w-full">
             <h2 className="text-3xl font-bold text-darkBlue text-center w-3/4 mb-10">{dt.title}</h2>
             <div className="w-3/4 flex flex-col items-center">
-                {dt.data.map((n) => (
+                {dt.data.map((n: {id:number; qt:string; rs:string;}) => (
                     <div className="py-6 px-6 w-full my-2 border shadow rounded-xl bg-white " key={n.id}>
                         <dt className="text-lg">
                             <button 

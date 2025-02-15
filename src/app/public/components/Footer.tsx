@@ -29,12 +29,12 @@ const Footer: React.FC = () => {
                             <div className="mt-16 grid grid-cols-4 gap-8 xl:col-span-2 xl:mt-0 max-md:grid-cols-1">
                                 
                                     {
-                                        dt.links.map(n=> (
+                                        dt.links.map((n: {id:number; title:string; list:any})=> (
                                             <div key={n.id}>
                                                 <h3 className="text-xl font-bold leading-6 text-white">{n.title}</h3>
                                                 <ul role="list" className="mt-6 space-y-4">
                                                     {
-                                                        n.list.map(i=> (
+                                                        n.list.map((i: {id:number; slug:string; name:string; })=> (
                                                             <li key={i.id}>
                                                                 <Link href={i.slug}
                                                                     className="text-md leading-6 text-lightGray hover:text-white outline-none">{i.name}

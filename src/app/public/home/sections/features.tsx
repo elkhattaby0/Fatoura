@@ -21,7 +21,7 @@ const Features: React.FC = () => {
 
                 <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3">
                     {
-                        dt.data.map(n=> (
+                        dt.data.map((n: {id:number; nbr: number; name:string; txt:string;})=> (
                             <div key={n.id}
                                 className="relative overflow-hidden rounded-lg border bg-lightGray select-none hover:shadow p-2">
                                 <div className="flex h-[180px] flex-col justify-between rounded-md p-6">

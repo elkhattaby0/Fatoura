@@ -4,7 +4,7 @@ import en from "../translation/en";
 import ar from "../translation/ar";
 
 type TranslationsType = {
-  [key: string]: Record<string, string>;
+  [key: string]: any; // Use 'any' to allow nested properties of various types
 };
 
 const translations: TranslationsType = { en, ar };
@@ -12,7 +12,7 @@ const translations: TranslationsType = { en, ar };
 interface LanguageContextType {
   language: string;
   changeLanguage: (lang: string) => void;
-  t: Record<string, string>;
+  t: any; 
 }
 
 const LanguageContext = createContext<LanguageContextType | null>(null);
@@ -22,7 +22,7 @@ interface LanguageProviderProps {
 }
 
 export const LanguageProvider = ({ children }: LanguageProviderProps) => {
-  const [language, setLanguage] = useState<string>("en"); 
+  const [language, setLanguage] = useState<string>("en");
 
   const changeLanguage = (lang: string) => {
     setLanguage(lang);
@@ -32,7 +32,7 @@ export const LanguageProvider = ({ children }: LanguageProviderProps) => {
 
   useEffect(() => {
     changeLanguage(language);
-  }, [language]); 
+  }, [language]);
 
   return (
     <LanguageContext.Provider value={{ language, changeLanguage, t: translations[language] }}>

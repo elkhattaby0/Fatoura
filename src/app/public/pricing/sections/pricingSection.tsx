@@ -16,7 +16,7 @@ const PricingSection:React.FC = () => {
             <div className="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0 mt-6 w-[85%]">
                 
                 {
-                    dt.data.map(n=> (
+                    dt.data.map((n:any)=> (
                         <div key={n.id}
                             className="flex flex-col max-w-lg p-6 mx-auto text-center text-black bg-lightGray border border-lightGray shadow rounded-lg shadow xl:p-8">
                             <h3 className="mb-4 text-2xl font-semibold text-darkBlue">{n.type}</h3>
@@ -28,7 +28,7 @@ const PricingSection:React.FC = () => {
 
                             <ul role="list" className="mb-8 space-y-4 text-left">
                                 {
-                                    n.ben.map(i=> (
+                                    n.ben.map((i:any)=> (
                                         <li className="flex items-center space-x-3" key={i}>
                                             <svg className="flex-shrink-0 w-5 h-5 text-darkBlue" fill="currentColor"
                                                 viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">

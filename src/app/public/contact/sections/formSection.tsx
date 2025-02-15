@@ -98,7 +98,7 @@ const FormSection:React.FC = () => {
                 </form>
                 <div className="w-1/2 max-md:w-full px-16 max-md:pl-0 max-md:mt-10">
                     {
-                        dt.contact.map(n=> (
+                        dt.contact.map((n: {id:number; title:string; txt1:string; txt2:string;})=> (
                             <div key={n.id} className="mb-8">
                                 <h2 className="font-bold text-xl text-darkBlue mb-2">
                                     {n.title}
@@ -116,7 +116,7 @@ const FormSection:React.FC = () => {
                         </h2>
                         <div className="flex">
                         {
-                            dt.socialMedia.map(n=> (
+                            dt.socialMedia.map((n: {name:string; icon: any})=> (
                                 <div 
                                     key={n.name}
                                     className="bg-black hover:bg-skyBlue cursor-pointer mx-1 p-2 rounded-xl w-fit"

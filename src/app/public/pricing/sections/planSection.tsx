@@ -13,7 +13,7 @@ const PlanSection:React.FC = () => {
                 <thead className="divide-y divide-lightGray shadow">
                     <tr className="white">
                         {
-                            dt.head.map(n=> (
+                            dt.head.map((n:any)=> (
                                 <th key={n}
                                     className="px-6 py-3 text-center text-xs font-medium text-black uppercase tracking-wider border-b-[1px] border-lightGray">
                                     {n}
@@ -25,7 +25,7 @@ const PlanSection:React.FC = () => {
                 <tbody className="bg-white">
           
                     {
-                        dt.data.map(n=> (
+                        dt.data.map((n:any)=> (
                             <tr key={n.id}>
                                 <td className="px-6 py-4 whitespace-nowrap text-md font-medium text-black border-b-[1px] border-lightGray">
                                 {n.feature}

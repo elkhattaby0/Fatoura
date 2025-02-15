@@ -16,7 +16,7 @@ const Benefits: React.FC = () => {
                     <div className="flex flex-wrap col-3 text-center justify-center">
 
                     {
-                        dt.data.map(n=> (
+                        dt.data.map((n: {id:number; img:string; txt: string; title:string})=> (
                             <div key={n.id} className="m-2 px-6 py-5 md:w-1/4 sm:w-1/2 bg-lightGray rounded-xl hover:shadow">
                                 <div className="py-6 transform transition duration-500 hover:scale-110">
                                 <div className="flex justify-center">

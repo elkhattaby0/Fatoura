@@ -21,7 +21,7 @@ const HowItWorks: React.FC = () => {
                   </h2>
                 </div>
                 <ul className="mt-8">
-                  {leftItems.map((n) => (
+                  {leftItems.map((n: {id:number; name:string; txt:string;}) => (
                     <li
                       key={n.id}
                       className="flex pb-10 mb-8 border rounded-xl bg-lightGray"
@@ -44,7 +44,7 @@ const HowItWorks: React.FC = () => {
 
               <div className="w-full lg:w-1/2 px-5">
                 <ul>
-                  {rightItems.map((n) => (
+                  {rightItems.map((n: {id:number; name:string; txt:string;}) => (
                     <li
                       key={n.id}
                       className="flex pb-10 mb-8 border rounded-xl bg-lightGray"
