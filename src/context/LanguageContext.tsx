@@ -1,4 +1,5 @@
-// @ts-nocheck
+/* eslint-disable */
+
 
 "use client";
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
