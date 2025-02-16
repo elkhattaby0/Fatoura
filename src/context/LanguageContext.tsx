@@ -3,16 +3,17 @@ import { createContext, useContext, useState, useEffect, ReactNode } from "react
 import en from "../translation/en";
 import ar from "../translation/ar";
 
-type TranslationsType = {
-  [key: string]: any; 
+
+type TranslationObject = {
+  [key: string]: string | TranslationObject;
 };
 
-const translations: TranslationsType = { en, ar };
+const translations: Record<string, TranslationObject> = { en, ar };
 
 interface LanguageContextType {
   language: string;
   changeLanguage: (lang: string) => void;
-  t: any; 
+  t: TranslationObject; // 
 }
 
 const LanguageContext = createContext<LanguageContextType | null>(null);
@@ -22,9 +23,9 @@ interface LanguageProviderProps {
 }
 
 export const LanguageProvider = ({ children }: LanguageProviderProps) => {
-  const [language, setLanguage] = useState<string>("en");
+  const [language, setLanguage] = useState<keyof typeof translations>("en");
 
-  const changeLanguage = (lang: string) => {
+  const changeLanguage = (lang: keyof typeof translations) => {
     setLanguage(lang);
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
