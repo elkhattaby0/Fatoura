@@ -49,18 +49,18 @@ const en = {
         "id": 1,
         "title": "Our Solutions",
         "list": [
-          {"id": 1, "name": "AI Platform", slug: ""},
-          {"id": 2, "name": "AI Algorithms", slug: ""},
-          {"id": 3, "name": "Industry Applications", slug: ""},
+          {"id": 1, "name": "AI Platform", slug: "#"},
+          {"id": 2, "name": "AI Algorithms", slug: "#"},
+          {"id": 3, "name": "Industry Applications", slug: "#"},
         ],
       },
       { 
         "id": 2,
         "title": "Use Cases",
         "list": [
-          {"id": 1, "name": "Predictive Analysis", slug: ""},
-          {"id": 2, "name": "Customer Experience", slug: ""},
-          {"id": 3, "name": "Automation", slug: ""},
+          {"id": 1, "name": "Predictive Analysis", slug: "#"},
+          {"id": 2, "name": "Customer Experience", slug: "#"},
+          {"id": 3, "name": "Automation", slug: "#"},
         ],
       },
       {
@@ -68,10 +68,10 @@ const en = {
         "title": "Resources",
         "list": [
           {"id": 1, "name": "Pricing", slug: route.public.pricing},
-          {"id": 2, "name": "Blog", slug: ""},
-          {"id": 3, "name": "Case Studies", slug: ""},
-          {"id": 4, "name": "Terms of Service", slug: ""},
-          {"id": 5, "name": "Privacy Policy", slug: ""},
+          {"id": 2, "name": "Blog", slug: "#"},
+          {"id": 3, "name": "Case Studies", slug: "#"},
+          {"id": 4, "name": "Terms of Service", slug: "#"},
+          {"id": 5, "name": "Privacy Policy", slug: "#"},
         ],
       },
       {
@@ -79,7 +79,7 @@ const en = {
         "title": "Company",
         "list": [
           {"id": 1, "name": "About Us", slug: route.public.about},
-          {"id": 2, "name": "Careers", slug: ""},
+          {"id": 2, "name": "Careers", slug: "#"},
           {"id": 3, "name": "Contact Us", slug: route.public.contact},
         ],
       },

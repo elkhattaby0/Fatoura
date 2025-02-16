@@ -2,15 +2,22 @@
 import React from "react";
 import { useLanguage } from "@/context/LanguageContext";
 
+interface TeamProps {
+    id:number; fname:string; lname:string; role:string;
+}
+interface CardProps {
+    id:number; name:string; text:string; team: TeamProps[]
+}
+
 const AboutSection:React.FC = () => {
     const { t } = useLanguage();
-    const dt = t.aboutLayout.about
+    const dt:CardProps[] = t.aboutLayout.about
     return (
         <div className="w-full flex justify-center items-center">
             <div className="flex flex-col gap-8 items-center justify-center bg-lightGray my-10 rounded-xl py-16 w-3/4 max-md:w-full">
                 
                 {
-                    dt.map((n: {id:number; name:string; text:string; team: any})=> (
+                    dt.map((n)=> (
                         <div className="w-3/4" key={n.id}>
                             <h2
                                 className="font-bold text-3xl text-darkBlue"
@@ -22,7 +29,7 @@ const AboutSection:React.FC = () => {
                                 n.team && (
                                     <ul className="flex flex-wrap mt-4 gap-4">
                                         {
-                                            n.team.map((i: {id:number; fname:string; lname:string; role:string})=> (
+                                            n.team.map((i)=> (
                                                 <li className="my- w-fit p-5 rounded-xl bg-white py-4" key={i.id}>
                                                     <h5>
                                                         <span className="font-semibold">

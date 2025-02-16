@@ -3,6 +3,10 @@ import React from "react";
 import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 
+interface SocialMedia {
+    name:string; icon: string;
+}
+
 const FormSection:React.FC = () => {
     const { t } = useLanguage();
     const dt = t.contactLayout
@@ -116,7 +120,7 @@ const FormSection:React.FC = () => {
                         </h2>
                         <div className="flex">
                         {
-                            dt.socialMedia.map((n: {name:string; icon: any})=> (
+                            dt.socialMedia.map((n: SocialMedia)=> (
                                 <div 
                                     key={n.name}
                                     className="bg-black hover:bg-skyBlue cursor-pointer mx-1 p-2 rounded-xl w-fit"

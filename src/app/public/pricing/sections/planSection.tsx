@@ -25,7 +25,7 @@ const PlanSection:React.FC = () => {
                 <tbody className="bg-white">
           
                     {
-                        dt.data.map((n: {id:number; feature:string; basic:any; pro:any; advanced:any;})=> (
+                        dt.data.map((n: {id:number; feature:string; basic:string; pro:string; advanced:string;})=> (
                             <tr key={n.id}>
                                 <td className="px-6 py-4 whitespace-nowrap text-md font-medium text-black border-b-[1px] border-lightGray">
                                 {n.feature}

@@ -4,7 +4,7 @@ import en from "../translation/en";
 import ar from "../translation/ar";
 
 type TranslationsType = {
-  [key: string]: any; // Use 'any' to allow nested properties of various types
+  [key: string]: any; 
 };
 
 const translations: TranslationsType = { en, ar };
