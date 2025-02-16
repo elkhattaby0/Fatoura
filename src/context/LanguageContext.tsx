@@ -13,7 +13,8 @@ const LanguageContext = createContext(null);
 // @ts-ignore
 export const LanguageProvider = ({ children }) => {
   const [language, setLanguage] = useState("en");
-
+  
+  // @ts-ignore
   const changeLanguage = (lang) => {
     setLanguage(lang);
     document.documentElement.lang = lang;
@@ -25,6 +26,7 @@ export const LanguageProvider = ({ children }) => {
   }, [language]);
 
   return (
+    // @ts-ignore
     <LanguageContext.Provider value={{ language, changeLanguage, t: translations[language] }}>
       {children}
     </LanguageContext.Provider>
