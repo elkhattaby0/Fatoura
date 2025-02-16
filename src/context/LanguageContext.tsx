@@ -1,17 +1,16 @@
-// @ts-nocheck
 "use client";
 import { createContext, useContext, useState, useEffect } from "react";
 import en from "../translation/en";
 import ar from "../translation/ar";
 
-const translations = { en, ar };
+const translations = { en, ar } as Record<string, any>;
 
-const LanguageContext = createContext(null);
+const LanguageContext = createContext<any>(null);
 
-export const LanguageProvider = ({ children }) => {
+export const LanguageProvider = ({ children }: { children: React.ReactNode }) => {
   const [language, setLanguage] = useState("en");
 
-  const changeLanguage = (lang) => {
+  const changeLanguage = (lang: string) => {
     setLanguage(lang);
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
