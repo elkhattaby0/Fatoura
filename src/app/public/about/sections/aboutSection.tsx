@@ -8,16 +8,18 @@ interface TeamProps {
 interface CardProps {
     id:number; name:string; text:string; team: TeamProps[]
 }
-
+interface AboutProps {
+    about: CardProps[]
+}
 const AboutSection:React.FC = () => {
     const { t } = useLanguage();
-    const dt:CardProps[] = t.aboutLayout.about
+    const dt:AboutProps = t.aboutLayout
     return (
         <div className="w-full flex justify-center items-center">
             <div className="flex flex-col gap-8 items-center justify-center bg-lightGray my-10 rounded-xl py-16 w-3/4 max-md:w-full">
                 
                 {
-                    dt.map((n)=> (
+                    dt.about.map((n)=> (
                         <div className="w-3/4" key={n.id}>
                             <h2
                                 className="font-bold text-3xl text-darkBlue"
