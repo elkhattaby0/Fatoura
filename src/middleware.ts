@@ -1,7 +1,14 @@
 import { NextResponse, NextRequest } from "next/server";
 
 export function middleware(req: NextRequest) {
-    const token = false;
+    let token = false;
+    
+    const authCookie = req.cookies.get("auth")?.value || "{}";
+    const authData = JSON.parse(authCookie);
+
+    if (authData?.email === "admin@admin" && authData?.password === "admin") {
+        token = true;
+    }
 
     const publicRoutes = [
         '/public/home',

@@ -1,13 +1,41 @@
 "use client"
 import Link from "next/link";
-import React from "react"
+import React, { useState } from "react"
 import { useLanguage } from "@/context/LanguageContext";
+import Notification from "../components/Notification";
 
 const SignIn: React.FC = () => {
+    const [notification, setNotification] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
+    const [info, setInfo] = useState({
+        email: "",
+        password: ""
+    })
+
+    const handleSubmit = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const {name, value} = e.target
+        setInfo({...info, [name]: value.toLowerCase()})
+    }
+    const stopRefresh = () => {
+        if (info.email === "" || info.password === "") {
+            setNotification({
+                message: "Please fill in all fields",
+                type: "error",
+            });
+        } else {
+            document.cookie = `auth=${JSON.stringify(info)}; path=/`;
+            setNotification({
+                message: "You are logged in",
+                type: "success",
+            });
+        }
+    }
     const { t } = useLanguage();
     const dt = t.signin
     return (
         <div className="py-16">
+            { notification && (
+                <Notification message={notification?.message} type={notification?.type} />
+            )}
             <div className="flex bg-lightGray rounded-2xl shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl">
             <div
                 className="hidden lg:block lg:w-1/2 bg-cover"
@@ -16,7 +44,7 @@ const SignIn: React.FC = () => {
                     `url(${dt.img})`,
                 }}
             ></div> 
-                <div className="w-full p-8 lg:w-1/2">
+                <form className="w-full p-8 lg:w-1/2" onSubmit={stopRefresh}>
                     <h2 className="text-2xl font-bold text-darkBlue text-center">{dt.logo}</h2>
                     <p className="text-xl text-black text-center">{dt.welcoming}</p>
                     <Link href={dt.google.link} className="flex items-center justify-center mt-4 text-white rounded-xl shadow bg-white hover:bg-skyBlue outline-none">
@@ -45,14 +73,25 @@ const SignIn: React.FC = () => {
                     </div>
                     <div className="mt-4">
                         <label className="block text-black text-sm font-bold mb-2">{dt.email}</label>
-                        <input className="bg-white text-black focus:outline-none focus:shadow-outline border border-gray-300 rounded-xl py-2 px-4 block w-full appearance-none" type="email" />
+                        <input 
+                            className="bg-white text-black focus:outline-none focus:shadow-outline border border-gray-300 rounded-xl py-2 px-4 block w-full appearance-none" type="email" 
+                            name="email"
+                            required
+                            value={info.email || ""}
+                            onChange={handleSubmit}
+                            />
                     </div>
                     <div className="mt-4">
                         <div className="flex justify-between">
                             <label className="block text-black text-sm font-bold mb-2">{dt.password}</label>
                             <Link href={dt.forgetpass.link} className="text-xs text-black outline-none">{dt.forgetpass.txt}</Link>
                         </div>
-                        <input className="bg-white text-black focus:outline-none focus:shadow-outline border border-gray-300 rounded-xl py-2 px-4 block w-full appearance-none" type="password" />
+                        <input className="bg-white text-black focus:outline-none focus:shadow-outline border border-gray-300 rounded-xl py-2 px-4 block w-full appearance-none" type="password" 
+                            name="password"
+                            required
+                            value={info.password || ""}
+                            onChange={handleSubmit}
+                        />
                     </div>
                     <div className="mt-8">
                         <button className="bg-darkBlue text-white font-bold py-2 px-4 w-full rounded-xl hover:bg-skyBlue outline-none">{dt.btn.txt}</button>
@@ -62,7 +101,7 @@ const SignIn: React.FC = () => {
                         <Link href={dt.signup.link} className="text-xs text-black uppercase outline-none">{dt.signup.txt}</Link>
                         <span className="border-b w-1/5 md:w-1/4"></span>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     )

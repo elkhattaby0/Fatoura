@@ -1,10 +1,11 @@
 import route from "../Routes.json"
+import imagessvg from "../../public/imagessvg"
 
 const logo = {
   "name": "Fatoura.",
   "slug": route.public.homepage
 }
-
+const currency = "MAD";
 const en = {
     "header": {
         "logo": logo,
@@ -503,7 +504,142 @@ const en = {
     },
 
     "dashboard": {
-
+      "logo": logo.name,
+      "aside": {
+        "topRoutes": [
+          {
+              "name": "Overview",
+              "img": imagessvg.overview,
+              "slug": route.auth.homepage
+          },
+          {
+              "name": "Tax Management",
+              "img": imagessvg.overview,
+              "slug": route.auth.tax
+          },
+          {
+              "name": "Invoicing",
+              "img": imagessvg.overview,
+              "slug": route.auth.invoicing
+          },
+          {
+              "name": "Cash Flow Management",
+              "img": imagessvg.overview,
+              "slug": route.auth.cashFlow
+          },
+          {
+              "name": "Financial Reports",
+              "img": imagessvg.overview,
+              "slug": route.auth.reports
+          },
+          {
+              "name": "Learning & Support",
+              "img": imagessvg.overview,
+              "slug": route.auth.support
+          },
+        ],
+        "bottomRoutes": [
+          {
+              "name": "Settings",
+              "img": imagessvg.overview,
+              "slug": route.auth.settings
+          },
+          {
+              "name": "Log Out",
+              "img": imagessvg.overview,
+              "slug": route.auth.homepage
+          },
+        ]
+      },
+      "userinfo": {
+        "name": "Mo Salah",
+        "type": "Admin",
+        "img": "/heroabout.jpg"
+      },
+      "search": "Search",
+      "taxLayout": {
+        "header": {
+          "title": "Tax Management",
+          "txt": "Stay compliant with Moroccan tax regulations."
+        },
+        "c1": {
+          "title": "Your Tax Overview",
+          "estimated": "Estimated Tax for", 
+          "amount": 5000,
+          "currency": currency,
+          "breakdown": "Tax Breakdown",
+          "vat": "VAT",
+          "vatAmount": 2000,
+          "income": "Income Tax",
+          "incomeAmount": 3000
+        },
+        "c2": {
+          "title": "Submit Your Tax Declaration",
+          "btn": "Tax Declaration",
+          "txt1": "Last Submission",
+          "dt1": "March 31, 2024",
+          "txt2": "Declaration History",
+          "table": {
+            "head": ["Date", "Amount", "Status"],
+            "body": [
+              {"id":1, "date":"31/03/2024", "amount":5000, "status":"Submitted"}
+            ]
+          }
+        },
+        "c3": {
+          "title": "Integration with Moroccan Tax Authorities",
+          "statustxt": "Status",
+          "status": "Connected",
+          "btn": "Reconnect",
+          "note": "Note : Ensure your connection is active to submit... "
+        }
+      },
+      "invoicingLayout": {
+        "header": {
+          "title": "Invoicing",
+          "txt": "Create, manage, and track your invoices."
+        },
+        "c1": {
+          "title": "Create a New Invoice",
+          "btn": "Create New Invoice",
+          "card": {
+            "title": "Create New Invoice",
+            "name": "Client Name",
+            "invoiceDate": "Invoice Date",
+            "dueDate": "Due Date",
+            "description": "Description",
+            "quantity": "Quantity",
+            "price":"Price",
+            "total":"Total",
+            "notes":"Notes (Optional)",
+            "btn":"Submit Invoice"
+          }
+        },
+        "c2": {
+          "title": "Invoice Reminders"
+        },
+        "c3": {
+            "title": "Your Invoices",
+            "headTable": ["in", "client name", "amount", "due date", "status", "actions"],
+            "data": [
+              { "id": 1, "name": "Invoice A", "amount": 5000, "date": "2024-03-01", "status": 1 },
+              { "id": 2, "name": "Invoice B", "amount": 3000, "date": "2024-03-05", "status": 2 },
+              { "id": 3, "name": "Invoice C", "amount": 7000, "date": "2024-03-10", "status": 3 },
+              { "id": 4, "name": "Invoice D", "amount": 2500, "date": "2024-03-15", "status": 1 },
+              { "id": 5, "name": "Invoice E", "amount": 4800, "date": "2024-03-20", "status": 2 },
+              { "id": 6, "name": "Invoice F", "amount": 6200, "date": "2024-03-25", "status": 3 },
+              { "id": 7, "name": "Invoice G", "amount": 4100, "date": "2024-03-28", "status": 1 },
+              { "id": 8, "name": "Invoice H", "amount": 3900, "date": "2024-03-30", "status": 2 },
+              { "id": 9, "name": "Invoice I", "amount": 8000, "date": "2024-04-02", "status": 3 },
+              { "id": 10, "name": "Invoice J", "amount": 5600, "date": "2024-04-05", "status": 1 }
+             ],
+            "sts": ["Paid", "Unpaid", "Overdue"],
+            "pr": "Previous",
+            "pg": "Page",
+            "nt": "Next",
+            "currency": currency
+        }
+      }
     }
 }
 

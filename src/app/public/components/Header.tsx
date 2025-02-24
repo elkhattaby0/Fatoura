@@ -66,9 +66,9 @@ const Header: React.FC = () => {
         <nav className="h-[80px] w-11/12 py-6 flex absolute z-10 ">
             <div className="flex flex-wrap  items-center justify-between w-full max-w-screen-xl mx-auto ">
                 <Link href={dt.logo.slug} className="max-md:w-1/5 flex items-end outline-none">
-                    <span className="text-2xl font-bold whitespace-nowrap text-darkBlue">
+                    <span className="flex items-center text-2xl font-bold whitespace-nowrap text-darkBlue">
                         {dt.logo.name}
-                        </span>
+                    </span>
                 </Link>
                 <Navigation />
                 <NavigationMobile />

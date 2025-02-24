@@ -10,7 +10,12 @@
     
     "auth": {
         "homepage": "/auth/dashboard",
-        "invoices": "/auth/invoices",
-        "expenses": "/auth/expenses"
+        "tax": "/auth/tax",
+        "invoicing": "/auth/invoicing",
+        "cashFlow": "/auth/cashFlow",
+        "reports": "/auth/reports",
+        "support": "/auth/support",
+        "settings": "/auth/settings",
+        "logout": "/auth/logout"
     }
 }

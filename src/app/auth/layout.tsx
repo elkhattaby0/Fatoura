@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import LeftSide from "./aside";
-import Header from "./Header";
+import LeftSide from "./components/aside";
+import Header from "./components/Header";
 export const metadata: Metadata = {
     title: "Fatoura - Dashboard",
     description: "Fatoura SaaS",
@@ -12,15 +12,15 @@ export default function AuthLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <div className="bg-white flex flex-col w-full h-[100vh]">
-            <Header />
-            <div className="w-full flex h-full">
-                <LeftSide />
-                <div className="bg-lightGray p-4 w-10/12 max-md:w-full">
+        <div className="bg-white flex flex- col w-full h-screen">
+            <LeftSide />
+            
+            <div className="w-full flex flex-col h-full">
+                <Header />
+                <div className="bg-lightGray p-4 w-full h-full max-md:h-fit">
                     {children}
                 </div>                
             </div>
         </div>
     )
-
 }
