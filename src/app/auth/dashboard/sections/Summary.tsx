@@ -81,6 +81,9 @@ const Summary:React.FC<SummaryProps> = (
                 headTable={headTable}
                 data={data}
                 currency={currency}
+                pr="Previous"
+                pg="Page"
+                nt="Next"
             />
         </div>
     )

@@ -13,13 +13,15 @@ interface TransactionTableProps {
     currency:string;
 }
 
-const SummaryTable:React.FC<TransactionTableProps> = ({headTable, data, currency}) => {
+const SummaryTable:React.FC<TransactionTableProps> = ({headTable, data, currency, pr, pg, nt}) => {
     const [currentPage, setCurrentPage] = useState(1);
     const rowsPerPage = 4; 
 
     const indexOfLastRow = currentPage * rowsPerPage;
     const indexOfFirstRow = indexOfLastRow - rowsPerPage;
     const currentRows = data.slice(indexOfFirstRow, indexOfLastRow);
+
+    const totalPages = Math.ceil(data.length / rowsPerPage);
     return (
         <div>
                 <table className="w-full border">
@@ -43,7 +45,7 @@ const SummaryTable:React.FC<TransactionTableProps> = ({headTable, data, currency
                     }
                 </tbody>
             </table>
-            {/* <div className="flex justify-around items-center mt-4">
+            <div className="flex justify-around items-center mt-4">
                 <button className="cursor-pointer hover:bg-lightGray py-2 px-3 hover:shadow rounded-xl" 
                     disabled={currentPage === 1} onClick={() => setCurrentPage(currentPage - 1)}>
                     {pr}
@@ -55,7 +57,7 @@ const SummaryTable:React.FC<TransactionTableProps> = ({headTable, data, currency
                     disabled={currentPage === totalPages} onClick={() => setCurrentPage(currentPage + 1)}>
                     {nt}
                 </button>
-            </div> */}
+            </div>
             
         </div>
     )

@@ -13,9 +13,16 @@ interface LeftProps {
 }
 
 const LeftProps: React.FC<LeftProps> = ({ slug, img, txt }) => {
+    const handleLogout = () => {
+        if (slug === "/auth/logout") {
+            document.cookie = "auth=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
+            
+            alert("You have logged out.");
+        }
+    };
     return (
         <li className="my-4" key={txt}>
-            <Link href={slug} className="flex items-center space-x-2" >
+            <Link href={slug} className="flex items-center space-x-2" onClick={handleLogout} >
                 {
                     img ? 
                     (

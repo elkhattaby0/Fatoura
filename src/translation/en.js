@@ -547,7 +547,7 @@ const en = {
           {
               "name": "Log Out",
               "img": imagessvg.overview,
-              "slug": route.auth.homepage
+              "slug": route.auth.logout
           },
         ]
       },
