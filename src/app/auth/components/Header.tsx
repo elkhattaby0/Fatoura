@@ -11,7 +11,7 @@ const search = en.dashboard.search
 
 interface LeftProps {
     slug: string;
-    img: string;
+    img?: string | React.ReactNode;
     txt: string;
     
 }
@@ -49,7 +49,7 @@ const LeftProps: React.FC<LeftProps> = ({ slug, img, txt }) => {
 const Headre: React.FC = () => {
     const [isShowed, setIsShowed] = useState(false);
     interface UserProps {
-        img: string;
+        img?: string | React.ReactNode;
         type: string;
         name: string;
     }
@@ -58,7 +58,7 @@ const Headre: React.FC = () => {
             <div className="flex items-center bg-transparant rounded-xl border py-0 cursor-pointer group relative w-fit">
                 <button className="rounded-xl flex items-center justify-center overflow-hidden max-md:hover:shadow-xl">
                     {
-                        img ? (
+                        typeof img === "string" ? (
                             <Image 
                                 src={img} 
                                 alt="user" 
