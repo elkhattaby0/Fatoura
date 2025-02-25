@@ -5,7 +5,6 @@ import Link from "next/link";
 
 interface DataProp {
     id:number; type:string; txt:string; price:number; ben:string[]; 
-
 }   
 
 interface CardPriceProps {

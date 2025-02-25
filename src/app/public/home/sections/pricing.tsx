@@ -4,13 +4,10 @@ import { useLanguage } from "@/context/LanguageContext";
 import CardPrice from "./cardPrice";
 
 
-interface PricringProp {
-    title:string; description:string;
-}
-
-const Pricing:React.FC<PricringProp> = () => {
+const Pricing:React.FC = () => {
     const { t } = useLanguage();
-    const dt = t.pricing
+    const dt = t.pricing;
+
     return (
         <div>
             <section className="bg-darkBlue">
