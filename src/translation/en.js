@@ -229,6 +229,18 @@ const en = {
         "slug": route.public.signin
       },
       "data": [
+        {
+          "id": 0,
+          "type": "Free",
+          "txt": "It's perfect for freelancers and artisans.",
+          "price": "0",
+          "ben": [
+            "Create invoices and quotes",
+            "Manage up to 50 invoices per month",
+            "Email support",
+            "Customizable invoice templates"
+          ]
+      },
           {
               "id": 1,
               "type": "Basic",
