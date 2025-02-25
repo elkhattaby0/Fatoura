@@ -52,8 +52,8 @@ const Testimonials: React.FC = () => {
                         </div>
                         <div className="overflow-hidden rounded-full bg-slate-50">
                         <Image src={img} alt="Avatar" 
-                        className={ img ? "h-14 w-14 object-cover bg-gray-300 h-12 w-12" : "animate-pulse  bg-gray-300 rounded-full"}
-                        width={50} height={50} />
+                        className={ img ? "size-20 object-cover bg-gray-300 h-12 w-12" : "animate-pulse  bg-gray-300 rounded-full"}
+                        width={100} height={100} />
                         </div>
                     </figcaption>
                     </figure>
