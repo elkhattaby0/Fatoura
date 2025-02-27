@@ -38,7 +38,7 @@ const Testimonials: React.FC = () => {
 
     const ClientFeedback: React.FC<clientFeedbackProps> = ({id, msg, name, img}) => {
         return (
-            <div key={id}  className="w-full min-w-[400px] bg-lightGray h-[300px] rounded-xl">
+            <div key={id}  className="w-full min-w-[400px] max-md:w-full bg-lightGray h-[300px] rounded-xl">
                 <ul className="flex flex-col gap-y-6 sm:gap-y-8 h-full " key={id}>
                 <li className="h-full ">
                     <figure className="relative flex flex-col justify-between h-full p-6">
@@ -93,11 +93,11 @@ const Testimonials: React.FC = () => {
                 <div className="mx-auto max-w-2xl md:text-center">
                     <h2 className="font-bold text-darkBlue text-3xl leading-[1.1] sm:text-3xl md:text-6xl">{dt.title}</h2>
                 </div>
-                <div className="relative w-[90%] max-md:w-[90%] h-full flex items-center mt-8">
+                <div className="relative w-[90%] max-md:w-[100%] h-full flex items-center mt-8">
                         {canScrollLeft && (
                             <button 
                                 onClick={() => handleScroll("left")} 
-                                className="absolute left-[-33] max-md:left-[-15] p-2 z-10 bg-darkBlue hover:bg-skyBlue text-lightGray h-fit rounded-xl hover:shadow-xl group outline-none"
+                                className="p-2 bg-darkBlue hover:bg-skyBlue text-lightGray h-fit rounded-xl hover:shadow-xl group outline-none"
                             >
                                 <svg className="size-5 rotate-45 group-hover:rotate-0" fill="#ffffff" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"  width="100%" height="100%" viewBox="0 0 550.354 550.354"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M541.169,208.807H261.295c-5.07,0-5.906-2.484-1.87-5.551l68.373-51.919c4.039-3.066,7.311-9.66,7.311-14.73V25.578 c0-5.07-3.269-6.689-7.301-3.614L3.025,269.61c-4.033,3.075-4.033,8.057,0,11.132L327.811,528.39 c4.033,3.076,7.301,1.457,7.301-3.613V413.748c0-5.07-3.274-11.665-7.311-14.73l-68.372-51.919 c-4.04-3.066-3.201-5.551,1.87-5.551h279.876c5.07,0,9.18-4.11,9.18-9.181V217.988 C550.349,212.917,546.239,208.807,541.169,208.807z"></path> </g> </g> </g></svg>
                             </button>
@@ -114,7 +114,7 @@ const Testimonials: React.FC = () => {
                     {canScrollRight && (
                         <button 
                             onClick={() => handleScroll("right")} 
-                            className="absolute right-[-33] max-md:right-[-15] p-2 z-10 bg-darkBlue hover:bg-skyBlue text-lightGray h-fit rounded-xl hover:shadow-xl group outline-none"
+                            className="p-2 bg-darkBlue hover:bg-skyBlue text-lightGray h-fit rounded-xl hover:shadow-xl group outline-none"
                         >
                             <svg className="size-5 rotate-[40rad] group-hover:-rotate-180" fill="#ffffff" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"  width="100%" height="100%" viewBox="0 0 550.354 550.354"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M541.169,208.807H261.295c-5.07,0-5.906-2.484-1.87-5.551l68.373-51.919c4.039-3.066,7.311-9.66,7.311-14.73V25.578 c0-5.07-3.269-6.689-7.301-3.614L3.025,269.61c-4.033,3.075-4.033,8.057,0,11.132L327.811,528.39 c4.033,3.076,7.301,1.457,7.301-3.613V413.748c0-5.07-3.274-11.665-7.311-14.73l-68.372-51.919 c-4.04-3.066-3.201-5.551,1.87-5.551h279.876c5.07,0,9.18-4.11,9.18-9.181V217.988 C550.349,212.917,546.239,208.807,541.169,208.807z"></path> </g> </g> </g></svg>
                         </button>
