@@ -42,11 +42,11 @@ const CardPrice:React.FC<CardPriceProps> = ({data, currency, btn}) => {
         <div className="relative w-[80%] max-md:w-[90%] h-full flex items-center">
             {canScrollLeft && (
                 <button 
-                    onClick={() => handleScroll("left")} 
-                    className="absolute left-[-33] max-md:left-[-15] p-2 z-10 bg-darkBlue hover:bg-skyBlue text-lightGray h-fit rounded-xl hover:shadow-xl"
-                >
-                    &#129128;
-                </button>
+                onClick={() => handleScroll("left")} 
+                className="p-2 bg-darkBlue hover:bg-skyBlue text-lightGray h-fit rounded-xl hover:shadow-xl group outline-none"
+            >
+                <svg className="size-5 rotate-45 group-hover:rotate-0" fill="#ffffff" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"  width="100%" height="100%" viewBox="0 0 550.354 550.354"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M541.169,208.807H261.295c-5.07,0-5.906-2.484-1.87-5.551l68.373-51.919c4.039-3.066,7.311-9.66,7.311-14.73V25.578 c0-5.07-3.269-6.689-7.301-3.614L3.025,269.61c-4.033,3.075-4.033,8.057,0,11.132L327.811,528.39 c4.033,3.076,7.301,1.457,7.301-3.613V413.748c0-5.07-3.274-11.665-7.311-14.73l-68.372-51.919 c-4.04-3.066-3.201-5.551,1.87-5.551h279.876c5.07,0,9.18-4.11,9.18-9.181V217.988 C550.349,212.917,546.239,208.807,541.169,208.807z"></path> </g> </g> </g></svg>
+            </button>
             )}
 
             <div ref={scrollRef} className="flex gap-4 overflow-hidden w-full">
@@ -108,11 +108,11 @@ const CardPrice:React.FC<CardPriceProps> = ({data, currency, btn}) => {
 
             {canScrollRight && (
                 <button 
-                    onClick={() => handleScroll("right")} 
-                    className="absolute right-[-33] max-md:right-[-15] p-2 z-10 bg-darkBlue hover:bg-skyBlue text-lightGray h-fit rounded-xl hover:shadow-xl"
-                >
-                    &#129130;
-                </button>
+                onClick={() => handleScroll("right")} 
+                className="p-2 bg-darkBlue hover:bg-skyBlue text-lightGray h-fit rounded-xl hover:shadow-xl group outline-none"
+            >
+                <svg className="size-5 rotate-[40rad] group-hover:-rotate-180" fill="#ffffff" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"  width="100%" height="100%" viewBox="0 0 550.354 550.354"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M541.169,208.807H261.295c-5.07,0-5.906-2.484-1.87-5.551l68.373-51.919c4.039-3.066,7.311-9.66,7.311-14.73V25.578 c0-5.07-3.269-6.689-7.301-3.614L3.025,269.61c-4.033,3.075-4.033,8.057,0,11.132L327.811,528.39 c4.033,3.076,7.301,1.457,7.301-3.613V413.748c0-5.07-3.274-11.665-7.311-14.73l-68.372-51.919 c-4.04-3.066-3.201-5.551,1.87-5.551h279.876c5.07,0,9.18-4.11,9.18-9.181V217.988 C550.349,212.917,546.239,208.807,541.169,208.807z"></path> </g> </g> </g></svg>
+            </button>
             )}
         </div>
     )
