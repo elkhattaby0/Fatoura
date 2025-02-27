@@ -9,41 +9,6 @@ const dt = en.dashboard.aside
 const user = en.dashboard.userinfo
 const search = en.dashboard.search
 
-interface LeftProps {
-    slug: string;
-    img?: string | React.ReactNode;
-    txt: string;
-    
-}
-
-const LeftProps: React.FC<LeftProps> = ({ slug, img, txt }) => {
-    return (
-        <li className="my-4" key={txt}>
-            <Link href={slug} className="flex items-center space-x-2">
-                {
-                    img ? 
-                    (
-                        <div className="size-6">
-                            {img}
-                        </div>
-                    ) :
-                    (
-                    <div className="animate-pulse rounded-full bg-gray-300 p-3"></div>
-                    )
-                }
-                <h3
-                    className={
-                        txt
-                            ? "font-bold text-white text-[14px] uppercase"
-                            : "animate-pulse rounded-full bg-gray-300 p-2 w-[150px]"
-                    }
-                >
-                    {txt}
-                </h3>
-            </Link>
-        </li>
-    );
-};
 
 
 const Headre: React.FC = () => {
@@ -53,6 +18,45 @@ const Headre: React.FC = () => {
         type: string;
         name: string;
     }
+
+    const LeftProps: React.FC<{slug: string; img?: string | React.ReactNode; txt: string;}> = ({ slug, img, txt }) => {
+        const handleLogout = () => {
+            setIsShowed(!isShowed)
+            if (slug === "/auth/logout") {
+                document.cookie = "auth=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
+                
+                alert("You have logged out.");
+            }
+        };
+        return (
+            <li className="my-4" key={txt}>
+                <Link href={slug} className="flex items-center space-x-2" onClick={handleLogout}>
+                    {
+                        img ? 
+                        (
+                            <div className="size-6">
+                                {img}
+                            </div>
+                        ) :
+                        (
+                        <div className="animate-pulse rounded-full bg-gray-300 p-3"></div>
+                        )
+                    }
+                    <h3
+                        className={
+                            txt
+                                ? "font-bold text-white text-[14px] uppercase"
+                                : "animate-pulse rounded-full bg-gray-300 p-2 w-[150px]"
+                        }
+                    >
+                        {txt}
+                    </h3>
+                </Link>
+            </li>
+        );
+    };
+    
+
     const UserInfo: React.FC<UserProps> = ({ img, type, name }) => {
         return (
             <div className="flex items-center bg-transparant rounded-xl border py-0 cursor-pointer group relative w-fit">
