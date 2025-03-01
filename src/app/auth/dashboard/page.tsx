@@ -13,19 +13,7 @@ export default function Dashboard() {
                 name="Mo Salah"
             />
             <div className="w-full flex gap-4 max-md:flex-col max-md:gap-0"> 
-                <Summary 
-                    title="Summary Widgets"
-                    unpaid="Unpaid Invoices" 
-                    nbrunpaid={3}
-                    amount="Total Amount Due"
-                    nbramount={15000}
-                    currency="MAD"
-                    deadline="Next Tax Deadline"
-                    dt="April 15, 2024"
-                    deadlinetxt="Amount Due"
-                    amountDue={5000}
-                    paymentsReceived="Recent Payments Received"
-                />
+                <Summary />
                 <div className="w-1/2 max-md:w-full">
                     <QuickActions 
                         title="Quick Actions"

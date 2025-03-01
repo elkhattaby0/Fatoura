@@ -1,6 +1,8 @@
 "use client"
 import React, { useState, useEffect } from "react";
 import PopUp from "../../components/PopUp";
+import Title2 from "../../components/title2";
+import Botton from "../../components/Button";
 
 
 interface CreateInvoiceProps {
@@ -44,25 +46,8 @@ const CreateInvoice: React.FC<CreateInvoiceProps> = ({ title, btn, title1, name,
     }
     return (
         <div className="h-fit rounded-xl p-4 border bg-white w-full mt-4">
-            {
-                title ?
-                    <h3
-                        className='font-bold text-xl text-darkBlue mb-4'
-                    >
-                        {title}
-                    </h3>
-                    : <div className="animate-pulse rounded-full bg-gray-300 p-2 w-[200px] mt-2"></div>
-            }
-            {
-                btn ?
-                    <button
-                        onClick={() => setIsOpend(!isOpend)}
-                        className='bg-darkBlue hover:bg-skyBlue hover:shadow text-white px-4 py-2 rounded-xl my-2 text-md'
-                    >
-                        {btn}
-                    </button>
-                    : <div className="animate-pulse rounded-full bg-gray-300 p-4 w-[150px] mt-2"></div>
-            }
+            <Title2 title={title} />
+            <Botton txt={btn} onClick={() => setIsOpend(!isOpend)} />
             {
                 isOpend && (
                 <PopUp>
@@ -71,7 +56,7 @@ const CreateInvoice: React.FC<CreateInvoiceProps> = ({ title, btn, title1, name,
                    max-h-screen overflow-y-auto flex flex-col "
                     >
                         <div className="flex justify-between mb-4">
-                            <h3 className="font-semibold text-darkBlue text-xl">{title1}</h3>
+                            <Title2 title={title1} />
                             <button
                                 className="flex items-center justify-center bg-lightGray p-[4px] size-7 rounded-xl"
                                 onClick={() => setIsOpend(!isOpend)}
@@ -122,10 +107,7 @@ const CreateInvoice: React.FC<CreateInvoiceProps> = ({ title, btn, title1, name,
                                 <p className={styles.paragrapgh}>{notes}</p>
                                 <textarea name="notes" className={styles.input} value={nts} onChange={(e) => setNts(e.target.value)}></textarea>
                             </label>
-            
-                            <button type="submit"
-                                className="bg-darkBlue hover:bg-skyBlue text-white p-2 mt-2 rounded-xl outline-none"
-                            >{btn1}</button>
+                            <Botton txt={btn1} />
                         </form>
                     </div>
                 </PopUp>

@@ -1,4 +1,8 @@
 import React from "react";
+import Title2 from "../../components/title2";
+import Button from "../../components/Button";
+import SCardTxt from "../../components/sCardTxt";
+import BoldParagraph from "../../components/boldParagraph";
 
 interface tdProps {id:number; date:string; amount:number; status:string;}
 
@@ -18,51 +22,10 @@ const TaxDeclaration:React.FC<TaxDeclarationProps> = (
     ) => {
     return (
         <div className='h-full rounded-xl p-4 border bg-white w-1/3 max-md:w-full mt-4'>
-            {
-                title ? 
-                <h3
-                    className='font-bold text-xl text-darkBlue mb-4'
-                >
-                    {title}
-                </h3> 
-                : <div className="animate-pulse rounded-full bg-gray-300 p-2 w-[200px] mt-2"></div>
-            }
-            {
-                btn ?
-                <button
-                    className='bg-darkBlue hover:bg-skyBlue hover:shadow text-white px-4 py-2 rounded-xl my-2 text-md'
-                >
-                    {btn}
-                </button>
-                : <div className="animate-pulse rounded-full bg-gray-300 p-4 w-[150px] mt-2"></div>
-            }
-            {
-                txt1 ? 
-                <p
-                    className='font-semibold text-medium text-black mt-2'
-                >
-                    {txt1 + " : "}
-                </p> 
-                : <div className="animate-pulse rounded-full bg-gray-300 p-2 w-[200px] mt-2"></div>
-            }
-            {
-                dt1 ? 
-                <p
-                    className='font-normal text-medium text-black'
-                >
-                    - {dt1}
-                </p> 
-                : <div className="animate-pulse rounded-full bg-gray-300 p-2 w-[200px] mt-2"></div>
-            }
-            {
-                txt2 ? 
-                <p
-                    className='font-semibold text-medium text-black my-2'
-                >
-                    {txt2 + " : "}
-                </p> 
-                : <div className="animate-pulse rounded-full bg-gray-300 p-2 w-[200px] mt-2"></div>
-            }
+            <Title2 title={title} />
+            <Button txt={btn} />
+            <SCardTxt id={1} name={txt1} text={dt1} />
+            <BoldParagraph txt={txt2} />
             <table className="w-full">
                 <thead className="text-md text-center bg-lightGray border border-lightGray">
                     <tr>

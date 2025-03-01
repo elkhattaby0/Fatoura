@@ -1,5 +1,6 @@
 "use client"
 import React, {useState} from "react";
+import Title2 from "../../components/title2";
 
 interface dataTd {
     id:number; name:string; amount:number; date:string; status:number
@@ -27,15 +28,7 @@ const YourInvoices:React.FC<YourInvoicesProps> = ({title, headTable, data, sts, 
       
     return (
         <div className="h-full rounded-xl p-4 border bg-white w-2/3 max-md:w-full mt-4">
-            {
-                title ? 
-                <h3
-                    className='font-bold text-xl text-darkBlue mb-4'
-                >
-                    {title}
-                </h3> 
-                : <div className="animate-pulse rounded-full bg-gray-300 p-2 w-[200px] mt-2"></div>
-            }
+            <Title2 title={title} />
             <table className="w-full border">
                 <thead className="bg-lightGray text-center h-8 uppercase">
                     <tr className="font-bold text-[12px] max-md:text-[10px] text-black w-full">

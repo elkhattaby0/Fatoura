@@ -1,6 +1,9 @@
 import React from "react";
 import SummaryTable from "./SummaryTable";
-
+import BoldParagraph from "../../components/boldParagraph";
+import Title2 from "../../components/title2";
+import SCard from "../../components/sCard";
+import SCardTxt from "../../components/sCardTxt";
 
 const headTable = ["Client Name", "Amount", "Date"]
 const data = [
@@ -8,79 +11,24 @@ const data = [
     {"client": "ahmed", "amount": 5000, "date": "April 20, 2024"},
 ]
 
-interface SummaryProps { 
-    title:string; 
-    unpaid:string; nbrunpaid:number; 
-    amount:string; nbramount:number; currency:string;
-    deadline:string; dt:string;
-    deadlinetxt:string; amountDue:number;
-    paymentsReceived:string;
-}
-const Summary:React.FC<SummaryProps> = (
-    {title, unpaid, nbrunpaid, amount, nbramount, currency, deadline, dt, deadlinetxt, amountDue, paymentsReceived}
-    ) => {
+
+
+const Summary:React.FC = () => {
     return (
         <div className="h-fit rounded-xl p-4 border bg-white w-1/2 max-md:w-full mt-4">
-            {
-                title ?
-                <h3
-                    className='font-bold text-xl text-darkBlue mb-4'
-                >
-                    {title}
-                </h3>
-                : <div className="animate-pulse rounded-full bg-gray-300 p-2 w-[200px] mt-2"></div>
-            }
-            {
-                unpaid ? 
-                <p
-                    className='font-normal text-medium text-black'
-                >
-                    - {unpaid + " : "} <span className="font-bold text-medium">{nbrunpaid}</span>
-                </p> 
-                : <div className="animate-pulse rounded-full bg-gray-300 p-2 w-[200px] mt-2"></div>
-            }
-            {
-                amount ? 
-                <p
-                    className='font-normal text-medium text-black'
-                >
-                    - {amount + " : "} <span className="font-bold text-medium text-darkBlue">{nbramount + " " + currency}</span>
-                </p> 
-                : <div className="animate-pulse rounded-full bg-gray-300 p-2 w-[200px] mt-2"></div>
-            }
-            <div className="my-4"></div>
-            {
-                deadline ? 
-                <p
-                    className='font-normal text-medium text-black'
-                >
-                    - {deadline + " : "} <span className="font-bold text-medium">{dt}</span>
-                </p> 
-                : <div className="animate-pulse rounded-full bg-gray-300 p-2 w-[200px] mt-2"></div>
-            }
-            {
-                deadlinetxt ? 
-                <p
-                    className='font-normal text-medium text-black'
-                >
-                    - {deadlinetxt + " : "} <span className="font-bold text-medium text-darkBlue">{amountDue + " " + currency}</span>
-                </p> 
-                : <div className="animate-pulse rounded-full bg-gray-300 p-2 w-[200px] mt-2"></div>
-            }
-            <div className="my-4"></div>
-            {
-                paymentsReceived  ? 
-                <p
-                    className="font-semibold text-medium text-black"
-                >
-                    {paymentsReceived} :
-                </p> 
-                : <div className="animate-pulse rounded-full bg-gray-300 p-2 w-[200px] mt-2"></div>
-            }
+            <div></div>
+            <Title2 title="Summary Widgets" />
+            <div className="flex flex-wrap  w-full col-2 gap-2">
+                <SCard id={1} name="Unpaid Invoices" amount={3} currency="" />
+                <SCard id={1} name="Total Amount Due" amount={15000} currency="MAD" />
+                <SCardTxt id={1} name="Next Tax Deadlin" text="April 15, 2024" />
+                <SCard id={1} name="Amount Due" amount={5000} currency="MAD" />
+            </div>
+            <BoldParagraph txt="Recent Payments Received" />
             <SummaryTable
                 headTable={headTable}
                 data={data}
-                currency={currency}
+                currency={"MAD"}
                 pr="Previous"
                 pg="Page"
                 nt="Next"

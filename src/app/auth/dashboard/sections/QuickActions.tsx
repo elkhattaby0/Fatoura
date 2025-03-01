@@ -1,5 +1,6 @@
 import React from "react";
 import Botton from "../../components/Button";
+import Title2 from "../../components/title2";
 
 interface QuickActionsProps {
     title:string;
@@ -9,15 +10,7 @@ interface QuickActionsProps {
 const QuickActions:React.FC<QuickActionsProps> = ({title}) => {
     return (
         <div className="h-fit rounded-xl p-4 border bg-white w-full mt-4">
-            {
-                title ?
-                <h3
-                    className='font-bold text-xl text-darkBlue mb-4'
-                >
-                    {title}
-                </h3>
-                : <div className="animate-pulse rounded-full bg-gray-300 p-2 w-[200px] mt-2"></div>
-            }
+            <Title2 title={title} />
             <div className="flex flex-wrap gap-x-4">
                 <Botton txt="Create Invoice" />
                 <Botton txt="Submit Tax Declaration" />

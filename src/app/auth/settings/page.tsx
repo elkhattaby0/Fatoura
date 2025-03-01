@@ -1,5 +1,6 @@
 import React from "react";
 import Title from "../components/title";
+import ProfileManagement from "./sections/profileManagement";
 
 export default function Settings() {
     return (
@@ -8,6 +9,7 @@ export default function Settings() {
                 title="Settings"
                 txt="Manage your profile and preferences."
             />
+            <ProfileManagement />
         </div>
     )
 }

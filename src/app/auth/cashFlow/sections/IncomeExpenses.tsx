@@ -3,6 +3,9 @@ import React, { useState } from "react"
 import SalesChart from "./BarChart";
 import TransactionTable from "./TransactionTable";
 import PopUp from "../../components/PopUp";
+import Title2 from "../../components/title2";
+import BoldParagraph from "../../components/boldParagraph";
+import Botton from "../../components/Button";
 
 const headTable = ["Date", "Description", "Amount", "Category"]
 const data = [
@@ -53,25 +56,9 @@ const IncomeExpenses:React.FC<IncomeExpensesProps> = ({title,txt, btn}) => {
     }
     return (
         <div className="h-full rounded-xl p-4 border bg-white w-1/2 max-md:w-full mt-4">
-            {
-                title ? 
-                <h3
-                    className='font-bold text-xl text-darkBlue mb-4'
-                >
-                    {title}
-                </h3> 
-                : <div className="animate-pulse rounded-full bg-gray-300 p-2 w-[200px] mt-2"></div>
-            }
+            <Title2 title={title} />
             <SalesChart />
-            {
-                txt ? 
-                <p
-                    className="font-semibold text-medium text-black"
-                >
-                    {txt} :
-                </p> 
-                : <div className="animate-pulse rounded-full bg-gray-300 p-2 w-[200px] mt-2"></div>
-            }
+            <BoldParagraph txt={txt} />
             <TransactionTable 
                 headTable={headTable}
                 data={data}
@@ -81,24 +68,14 @@ const IncomeExpenses:React.FC<IncomeExpensesProps> = ({title,txt, btn}) => {
                 currency="MAD"
 
             />
-            {
-                btn ?
-                    <button
-                        onClick={() => setIsOpend(!isOpend)}
-                        className='bg-darkBlue hover:bg-skyBlue hover:shadow text-white px-4 py-2 rounded-xl my-2 text-md'
-                    >
-                        {btn}
-                    </button>
-                    : <div className="animate-pulse rounded-full bg-gray-300 p-4 w-[150px] mt-2"></div>
-            }
-
+            <Botton txt={btn} onClick={() => setIsOpend(!isOpend)} />
             {
                 isOpend && (
                 <PopUp>
                     <div className="bg-white shadow-2xl py-4 px-8 w-[500px] max-md:w-full h-full 
                    max-h-screen overflow-y-auto flex flex-col">
                         <div className="flex justify-between mb-4"> 
-                            <h3 className="font-semibold text-darkBlue text-xl mb-3">New Transaction</h3>
+                            <Title2 title="New Transaction" />
                             <button
                                 className="flex items-center justify-center bg-lightGray p-[4px] size-7 rounded-xl"
                                 onClick={() => setIsOpend(!isOpend)}
@@ -123,9 +100,7 @@ const IncomeExpenses:React.FC<IncomeExpensesProps> = ({title,txt, btn}) => {
                                 <input type="number" name="category" className={styles.input} />
                             </label>
 
-                            <button type="submit"
-                                className="bg-darkBlue hover:bg-skyBlue text-white p-2 mt-2 rounded-xl outline-none"
-                            >Add</button>
+                            <Botton txt="Add" />
                         </form>
                     </div>
                 </PopUp>

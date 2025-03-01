@@ -1,4 +1,6 @@
 import React from "react";
+import Title2 from "../../components/title2";
+import Button from "../../components/Button";
 
 interface TaxAuthoritiesProps {
     title:string;
@@ -10,15 +12,7 @@ interface TaxAuthoritiesProps {
 const TaxAuthorities:React.FC<TaxAuthoritiesProps> = ({title, statustxt, status, btn, note}) => {
     return (
         <div className='h-full rounded-xl p-4 border bg-white w-1/3 max-md:w-full mt-4'>
-            {
-                title ? 
-                <h3
-                    className='font-bold text-xl text-darkBlue mb-4'
-                >
-                    {title}
-                </h3> 
-                : <div className="animate-pulse rounded-full bg-gray-300 p-2 w-[200px] mt-2"></div>
-            }
+            <Title2 title={title} />
             <div className='flex items-center'>
                 {
                     statustxt ?
@@ -39,14 +33,8 @@ const TaxAuthorities:React.FC<TaxAuthoritiesProps> = ({title, statustxt, status,
                 }
             </div>
             
-            { status.toLocaleLowerCase() !== "connected" &&
-                (btn ?
-                    <button
-                        className='bg-darkBlue hover:bg-skyBlue hover:shadow text-white px-4 py-2 rounded-xl my-2 text-md'
-                    >
-                        {btn}
-                    </button>
-                : <div className="animate-pulse rounded-full bg-gray-300 p-4 w-[150px] mt-2"></div>)
+            { 
+                status.toLocaleLowerCase() !== "connected" && <Button txt={btn} />
             }
             { status.toLocaleLowerCase() !== "connected" &&
                 (note ?
