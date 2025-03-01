@@ -30,11 +30,11 @@ const Headre: React.FC = () => {
         };
         return (
             <li className="my-4" key={txt}>
-                <Link href={slug} className="flex items-center space-x-2" onClick={handleLogout}>
+                <Link href={slug} className="flex items-center space-x-2 group hover:bg-white rounded-xl hover:shadow-md" onClick={handleLogout}>
                     {
                         img ? 
                         (
-                            <div className="size-6">
+                            <div className="size-7 rounded-xl bg-white p-[6px] group-hover:border-r border-darkBlue">
                                 {img}
                             </div>
                         ) :
@@ -45,7 +45,7 @@ const Headre: React.FC = () => {
                     <h3
                         className={
                             txt
-                                ? "font-bold text-white text-[14px] uppercase"
+                                ? "font-bold text-white text-[14px] uppercase group-hover:text-darkBlue"
                                 : "animate-pulse rounded-full bg-gray-300 p-2 w-[150px]"
                         }
                     >
@@ -59,8 +59,8 @@ const Headre: React.FC = () => {
 
     const UserInfo: React.FC<UserProps> = ({ img, type, name }) => {
         return (
-            <div className="flex items-center bg-transparant rounded-xl border py-0 cursor-pointer group relative w-fit">
-                <button className="rounded-xl flex items-center justify-center overflow-hidden max-md:hover:shadow-xl">
+            <div className="flex items-center bg-transparant rounded-xl py-0 cursor-pointer relative w-fit">
+                <button className="rounded-xl flex items-center justify-center">
                     {
                         typeof img === "string" ? (
                             <Image 
@@ -77,9 +77,9 @@ const Headre: React.FC = () => {
                     }                    
                 </button>
                 
-                <div className="hidden group-hover:flex flex-col opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-in-out px-2 leading-[15px]">
-                    <h3 className={`${type ? "" : "animate-pulse bg-gray-300 p-2 w-1/2 rounded-full mb-1"} font-bold text-[12px] text-darkBlue uppercase`}>{type}</h3>
-                    <h2 className={`${name ? "" : "animate-pulse bg-gray-300 p-2 w-[100px] rounded-full"} font-medium text-[13px] text-black`}>{name}</h2>
+                <div className="flex flex-col px-2 leading-[15px]">
+                    <h3 className={`${name ? "" : "animate-pulse bg-gray-300 p-2 w-[100px] rounded-full"} font-bold text-[13px] text-black`}>{name}</h3>
+                    <h2 className={`${type ? "" : "animate-pulse bg-gray-300 p-2 w-1/2 rounded-full mb-1"} font-medium text-[12px] text-darkBlue uppercase`}>{type}</h2>                    
                 </div>
             </div>
         );
@@ -131,13 +131,13 @@ const Headre: React.FC = () => {
                 className={`relative hidden  ${isShowed ? "max-md:flex" : "hidden" }`}
             >
                 <div className="absolute top-18 z-10 flex flex-col justify-start items-start w-full h-screen px-4  bg-darkBlue">
-                    <ul className="font-medium text-[12px] h-fit">
+                    <ul className="font-medium text-[12px] h-fit w-full">
                         {dt.topRoutes.map((n) => (
                             <LeftProps key={n.name} txt={n.name} slug={n.slug} img={n.img} />
                         ))}
                         
                     </ul>
-                    <ul className="font-medium text-[12px] h-fit">
+                    <ul className="font-medium text-[12px] h-fit w-full">
                         {dt.bottomRoutes.map((n) => (
                             <LeftProps key={n.name} txt={n.name} slug={n.slug} img={n.img} />
                         ))}

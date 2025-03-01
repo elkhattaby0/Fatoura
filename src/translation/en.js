@@ -526,39 +526,39 @@ const en = {
           },
           {
               "name": "Tax Management",
-              "img": imagessvg.overview,
+              "img": imagessvg.tax,
               "slug": route.auth.tax
           },
           {
               "name": "Invoicing",
-              "img": imagessvg.overview,
+              "img": imagessvg.invoicing,
               "slug": route.auth.invoicing
           },
           {
               "name": "Cash Flow Management",
-              "img": imagessvg.overview,
+              "img": imagessvg.cashFlow,
               "slug": route.auth.cashFlow
           },
           {
               "name": "Financial Reports",
-              "img": imagessvg.overview,
+              "img": imagessvg.reports,
               "slug": route.auth.reports
           },
           {
               "name": "Learning & Support",
-              "img": imagessvg.overview,
+              "img": imagessvg.support,
               "slug": route.auth.support
           },
         ],
         "bottomRoutes": [
           {
               "name": "Settings",
-              "img": imagessvg.overview,
+              "img": imagessvg.settings,
               "slug": route.auth.settings
           },
           {
               "name": "Log Out",
-              "img": imagessvg.overview,
+              "img": imagessvg.logout,
               "slug": route.auth.logout
           },
         ]
