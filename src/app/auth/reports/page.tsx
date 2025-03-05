@@ -11,7 +11,7 @@ export default function Reports() {
                 title="Financial Reports."
                 txt="Generate and export your financial data."
             />
-            <div className="flex w-full gap-4">
+            <div className="flex w-full gap-4 max-md:flex-col">
                 <PlatformRevenue />
                 <ExportFinancialData />                
             </div>

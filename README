@@ -1,0 +1,18 @@
+const LabelTxtInput: React.FC<{ txt: string; inptype: string }> = ({ txt, inptype }) => {
+  return (
+    <label className="relative block w-full">
+      <input
+        type={inptype}
+        className="peer outline-none bg-lightGray py-2 px-4 rounded-xl border border-darkBlue w-full"
+        placeholder=" " // Keep empty to trigger :placeholder-shown
+      />
+      <p className="absolute left-3 px-3 bg-darkBlue rounded-xl w-fit text-lightGray transition-all 
+        peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-lightGray 
+        peer-focus:top-0 peer-focus:text-sm peer-focus:text-blue-600">
+        {txt}
+      </p>
+    </label>
+  );
+};
+
+export default LabelTxtInput;
